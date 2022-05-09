@@ -1,3 +1,4 @@
+using System.Net;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,6 +61,7 @@ public class PlayerController : MonoBehaviour
      public Spine.AnimationState spineAnimationState;
     public Spine.Skeleton skeleton;
 
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -94,9 +96,12 @@ public class PlayerController : MonoBehaviour
         //   new Vector2(Vector2.Distance(lr.GetPosition(0), lr.GetPosition(lr.positionCount - 1)) / lr.widthMultiplier,1);
     lr.material.mainTextureScale = new Vector2(1f / lr.startWidth, 1.0f);
     checkAnimationJump();
+    CheckJumpEnemy();
 
 #endif
-    Debug.Log(Time.deltaTime);
+    }
+    void fixedUpdate(){
+        
     }
     void SetPower()
     {
@@ -107,8 +112,8 @@ public class PlayerController : MonoBehaviour
             maxForceY = 13f;
         }
         else{
-            minForceX = .2f;
-            maxForceX = 2.2f;
+            minForceX = .7f;
+            maxForceX = 2.7f;
             minForceY = 1f;
             maxForceY = 11f;
 
@@ -147,7 +152,7 @@ public class PlayerController : MonoBehaviour
 
             // tranjectory line
             Vector2 StartTranjectory = new Vector2(transform.position.x, transform.position.y + .5f);
-            Vector2[] tranjectory = Plot(rb, StartTranjectory, jumpForce, 500);
+            Vector2[] tranjectory = Plot(rb, StartTranjectory, jumpForce, 1000);
             lr.positionCount = tranjectory.Length;
             Vector3[] positions = new Vector3[tranjectory.Length];
             for(int i = 0; i < tranjectory.Length; i++)
@@ -221,7 +226,21 @@ public class PlayerController : MonoBehaviour
         spineAnimationState.SetAnimation(0, idleAnimationName, true);
 
     }
-
+    public void CheckJumpEnemy(){
+        if(GameManager.instance.isJumpingEnemy){
+            int layerPlatform = 3;
+            int layerMaskPLatformat = 1 << layerPlatform;
+           RaycastHit2D hitBottom = Physics2D.Raycast(transform.position, Vector2.down, 1f, layerMaskPLatformat);
+           if(hitBottom.collider != null && hitBottom.collider.CompareTag("Ground")){
+                GameManager.instance.isJumpingEnemy = false;
+                if(GameManager.instance.endPoint.Length > GameManager.instance.currEndPoint + 1){
+                     GameManager.instance.currEndPoint++;
+                }
+                else{
+                    return;
+                }
+            }
+    }}
     
  
     
@@ -243,16 +262,16 @@ public class PlayerController : MonoBehaviour
         }    
         if(other.gameObject.tag == "Die"){
             Die();
-            StartCoroutine(DieCouroutine());
+            //StartCoroutine(DieCouroutine());
         }
-        if(other.gameObject.CompareTag("endPoint")){
-            if(GameManager.instance.endPoint.Length > GameManager.instance.currEndPoint + 1){
-                GameManager.instance.currEndPoint++;
-            }
-            else{
-                return;
-            }
-        }
+    //    if(other.gameObject.CompareTag("endPoint")){
+    //         if(GameManager.instance.endPoint.Length > GameManager.instance.currEndPoint + 1){
+    //             GameManager.instance.currEndPoint++;
+    //         }
+    //         else{
+    //             return;
+    //         }
+    //     }
        
     }
     IEnumerator DieCouroutine(){
@@ -275,8 +294,9 @@ public class PlayerController : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Die")){
             Die();
-            StartCoroutine(DieCouroutine());
+            
         }
+         
     }
     
     public void DisableRigibody(){
@@ -296,6 +316,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(0, 5f);
         coll.enabled = false;
         spineAnimationState.SetAnimation(0, dieAnimationName, false);
+        StartCoroutine(DieCouroutine());
     }
 
 }

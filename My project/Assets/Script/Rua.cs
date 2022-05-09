@@ -96,13 +96,19 @@ public class Rua : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "foot"){
+        if(other.gameObject.CompareTag("foot")){
             
             PlayerController.instance.DisableRigibody();
             PlayerController.instance.EnableRigigbody();
             FolowRoute.ins.JumpToEnd();
             NormalToShell();
+            GameManager.instance.isJumpingEnemy = true;
             canMove = false;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Player")){
+            PlayerController.instance.Die();
         }
     }
     public void  NormalToShell(){

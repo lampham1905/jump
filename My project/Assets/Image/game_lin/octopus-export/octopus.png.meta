@@ -1,7 +1,52 @@
 fileFormatVersion: 2
 guid: 19f2032166340f143b01e9abc5f3a2ba
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6349360636359246829
+    second: octopus_0
+  - first:
+      213: 3163395358573969893
+    second: octopus_1
+  - first:
+      213: -5393904256684418717
+    second: octopus_2
+  - first:
+      213: -5181877506223443383
+    second: octopus_3
+  - first:
+      213: 1795026253520550705
+    second: octopus_4
+  - first:
+      213: -3042169255768814910
+    second: octopus_5
+  - first:
+      213: 4710754661084121898
+    second: octopus_6
+  - first:
+      213: -3953433122411276415
+    second: octopus_7
+  - first:
+      213: -3758822760625922581
+    second: octopus_8
+  - first:
+      213: 5993656015828772236
+    second: octopus_9
+  - first:
+      213: -3482316335579857248
+    second: octopus_10
+  - first:
+      213: -248415419706055424
+    second: octopus_11
+  - first:
+      213: 826734031537189730
+    second: octopus_12
+  - first:
+      213: 8401536851600582493
+    second: octopus_13
+  - first:
+      213: 3180740460076729970
+    second: octopus_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -24,7 +69,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -51,7 +95,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -89,31 +133,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 1
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -142,8 +162,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5399ee7e1f8115649bc7064a8011514a
-      internalID: 1430067885
+      spriteID: 31c75fe342a82e7a0800000000000000
+      internalID: -6349360636359246829
       vertices: []
       indices: 
       edges: []
@@ -163,8 +183,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7dc429453c1b1b4ea22713d61c345ba
-      internalID: 1674848682
+      spriteID: 5e1cbe77153a6eb20800000000000000
+      internalID: 3163395358573969893
       vertices: []
       indices: 
       edges: []
@@ -184,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b233dd4c809e7064cbde9753bc46460a
-      internalID: -1986140720
+      spriteID: 3699bdb18a00525b0800000000000000
+      internalID: -5393904256684418717
       vertices: []
       indices: 
       edges: []
@@ -205,8 +225,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69d24273233014f49ae75d367b1468f7
-      internalID: -1390951642
+      spriteID: 942f6f3ecd54618b0800000000000000
+      internalID: -5181877506223443383
       vertices: []
       indices: 
       edges: []
@@ -226,8 +246,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18a4cd5d113c5704c930765d90a75335
-      internalID: -32800455
+      spriteID: 13bb79bfdd639e810800000000000000
+      internalID: 1795026253520550705
       vertices: []
       indices: 
       edges: []
@@ -247,8 +267,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b689b2dbafebd0b45a84b62663c04718
-      internalID: -456556654
+      spriteID: 2ca09431e2b08c5d0800000000000000
+      internalID: -3042169255768814910
       vertices: []
       indices: 
       edges: []
@@ -268,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3f32ffe322d9e34db759d741a521ac8
-      internalID: 294881020
+      spriteID: a2b4fe5d766ff5140800000000000000
+      internalID: 4710754661084121898
       vertices: []
       indices: 
       edges: []
@@ -289,8 +309,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47c4f0be2edf4b64b9e6b18106b46afd
-      internalID: 1436952625
+      spriteID: 187996775859229c0800000000000000
+      internalID: -3953433122411276415
       vertices: []
       indices: 
       edges: []
@@ -310,8 +330,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44cc265a47c324744ac7d7887372f054
-      internalID: 2103780451
+      spriteID: bed1d334d9af5dbc0800000000000000
+      internalID: -3758822760625922581
       vertices: []
       indices: 
       edges: []
@@ -331,8 +351,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 930689faaca038f41a3554568ea63fe9
-      internalID: -978058190
+      spriteID: c856b51046ebd2350800000000000000
+      internalID: 5993656015828772236
       vertices: []
       indices: 
       edges: []
@@ -352,8 +372,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6c4f272b7906194ead4f7f0d134aeb7
-      internalID: -1645876471
+      spriteID: 0aef83e2eb35cafc0800000000000000
+      internalID: -3482316335579857248
       vertices: []
       indices: 
       edges: []
@@ -373,8 +393,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bcdd2b00d8222447bc9d45ab3abb66b
-      internalID: 1236499933
+      spriteID: 005e0bfed737d8cf0800000000000000
+      internalID: -248415419706055424
       vertices: []
       indices: 
       edges: []
@@ -394,8 +414,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9281eb805dd6e54388be635c65ad2b6
-      internalID: 337961464
+      spriteID: 2633081b836297b00800000000000000
+      internalID: 826734031537189730
       vertices: []
       indices: 
       edges: []
@@ -415,8 +435,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fcb121e82c00594da3c39111a06706c
-      internalID: 1803711555
+      spriteID: d57a107d041489470800000000000000
+      internalID: 8401536851600582493
       vertices: []
       indices: 
       edges: []
@@ -436,8 +456,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3eb44218b7d5734f8708964b256787c
-      internalID: 1675154735
+      spriteID: 276069d9892442c20800000000000000
+      internalID: 3180740460076729970
       vertices: []
       indices: 
       edges: []
@@ -452,22 +472,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      octopus_4: -32800455
-      octopus_1: 1674848682
-      octopus_7: 1436952625
-      octopus_8: 2103780451
-      octopus_3: -1390951642
-      octopus_6: 294881020
-      octopus_13: 1803711555
-      octopus_10: -1645876471
-      octopus_9: -978058190
-      octopus_2: -1986140720
-      octopus_0: 1430067885
-      octopus_11: 1236499933
-      octopus_5: -456556654
-      octopus_12: 337961464
-      octopus_14: 1675154735
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

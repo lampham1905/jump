@@ -48,7 +48,8 @@ public class FolowRoute : MonoBehaviour
         Vector2 p0 = Player.position;
         Vector2 p1 = point1.position;
         Vector2 p2 = point2.position;
-        Vector2 p3 = GameManager.instance.endPointCurrent.transform.position;
+        //Vector2 p3 = GameManager.instance.endPointCurrent.transform.position;
+        Vector2 p3 = new Vector2(GameManager.instance.endPointCurrent.transform.position.x, GameManager.instance.endPointCurrent.transform.position.y);
 
         while(tParam < 1)
         {

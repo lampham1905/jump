@@ -16,9 +16,9 @@ public class CamController : MonoBehaviour
             return;
         }
     }
-    public float lerpTime;
-    public float xOffset;
-    bool m_canLerp;
+     float lerpTime = 2f;
+     float xOffset = 2f;
+    bool m_canLerp ;
     float m_lerpXDist;
     void Start()
     {

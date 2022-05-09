@@ -17,7 +17,7 @@ public class EnemyFire : MonoBehaviour
     private SkeletonAnimation skeletonAnimation;
     private Spine.AnimationState spineAnimationState;
     private Spine.Skeleton skeleton;
-    bool isShooting = false;
+    public bool isShooting = false;
      private void Start()
     {
         StartCoroutine(AnimationCoroutine());
@@ -30,20 +30,14 @@ public class EnemyFire : MonoBehaviour
     private void Shot(){
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
-    IEnumerator ShotCoroutine(){
-        
-        while(true){
-            yield return new WaitForSeconds(1.6f);
-            Shot();
-        }
-    }
+   
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // if(other.gameObject.tag == "foot"){
-        //     Destroy(gameObject);
-        //     FolowRoute.ins.JumpToEnd();
-        //     PlayerController.instance.DisableRigibody();
-        // }
+        if(other.gameObject.tag == "foot"){
+            Destroy(gameObject);
+            FolowRoute.ins.JumpToEnd();
+            PlayerController.instance.DisableRigibody();
+        }
     }
     IEnumerator AnimationCoroutine(){
         while(true){
@@ -51,7 +45,7 @@ public class EnemyFire : MonoBehaviour
              yield return new WaitForSeconds(1.5f);
             spineAnimationState.SetAnimation(0, AttackAnimationName, false);
               spineAnimationState.AddAnimation(0, idleNormalAnimationName, true, 0);
-              yield return new WaitForSeconds(.2f);
+              yield return new WaitForSeconds(1f);
               Shot();
         }
     }

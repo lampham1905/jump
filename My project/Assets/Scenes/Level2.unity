@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3969b242492413f48b7386cb7ae73e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpTime: 1
+  lerpTime: 2
   xOffset: 2
 --- !u!20 &519420031
 Camera:

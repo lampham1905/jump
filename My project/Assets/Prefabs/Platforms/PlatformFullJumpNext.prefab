@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6196968004486900234}
   - component: {fileID: 6196968004486900235}
   - component: {fileID: 6196968004486900228}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlatformFullJumpNext
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2079946733
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bef85f120ae3c8b4c99e6a3cbf0c8d0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -122,6 +122,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jumpFull
       objectReference: {fileID: 0}
+    - target: {fileID: 1268387288131872939, guid: 2373bed2523e79b42afb2086ab50270c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2345130353013091529, guid: 2373bed2523e79b42afb2086ab50270c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -168,11 +172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5418617811376855053, guid: 2373bed2523e79b42afb2086ab50270c, type: 3}
       propertyPath: m_Size.x
-      value: 1.1244122
+      value: 1.4307301
       objectReference: {fileID: 0}
     - target: {fileID: 5418617811376855053, guid: 2373bed2523e79b42afb2086ab50270c, type: 3}
       propertyPath: m_Offset.x
-      value: 0.29124534
+      value: 0.30806616
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2373bed2523e79b42afb2086ab50270c, type: 3}
@@ -192,13 +196,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: nextPlaform
       objectReference: {fileID: 0}
+    - target: {fileID: 3760879001307032066, guid: 1cf8a88d55e063441b72dc1ac60c818b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3760879001307032124, guid: 1cf8a88d55e063441b72dc1ac60c818b, type: 3}
       propertyPath: m_Size.x
-      value: 1.1981705
+      value: 1.486892
       objectReference: {fileID: 0}
     - target: {fileID: 3760879001307032124, guid: 1cf8a88d55e063441b72dc1ac60c818b, type: 3}
       propertyPath: m_Offset.x
-      value: -0.00946182
+      value: -0.019085795
       objectReference: {fileID: 0}
     - target: {fileID: 3760879001307032125, guid: 1cf8a88d55e063441b72dc1ac60c818b, type: 3}
       propertyPath: m_RootOrder
