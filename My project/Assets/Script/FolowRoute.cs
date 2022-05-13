@@ -41,15 +41,16 @@ public class FolowRoute : MonoBehaviour
      
     }
 
-    private IEnumerator GoByTheRoute(int routeNum)
+    private IEnumerator GoByTheRoute(int routeNum, Transform endPoint)
     {
         coroutineAllowed = false;
 
         Vector2 p0 = Player.position;
         Vector2 p1 = point1.position;
         Vector2 p2 = point2.position;
+        Vector2 p3 = endPoint.position;
         //Vector2 p3 = GameManager.instance.endPointCurrent.transform.position;
-        Vector2 p3 = new Vector2(GameManager.instance.endPointCurrent.transform.position.x, GameManager.instance.endPointCurrent.transform.position.y);
+        // Vector2 p3 = new Vector2(GameManager.instance.endPointCurrent.transform.position.x, GameManager.instance.endPointCurrent.transform.position.y);
 
         while(tParam < 1)
         {
@@ -70,10 +71,11 @@ public class FolowRoute : MonoBehaviour
 
         coroutineAllowed = true;
     }
-    public void JumpToEnd(){
+    public void JumpToEnd(Transform endPoint){
          if (coroutineAllowed)
         {
-            StartCoroutine(GoByTheRoute(routeToGo));
+            StartCoroutine(GoByTheRoute(routeToGo, endPoint));
         }
     }
+
 }

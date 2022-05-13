@@ -163,6 +163,7 @@ MonoBehaviour:
   left: 3.6
   right: 4.8
   speed: 0.34
+  endPoint: {fileID: 0}
 --- !u!61 &5563639146410108680
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -45,4 +45,5 @@ public class CamController : MonoBehaviour
         m_canLerp = true;
         m_lerpXDist = dist;
     }
+     
 }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5818366167396077360}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 13.1, z: -39.098755}
+  m_LocalPosition: {x: 1.1, y: 13.79, z: -39.098755}
   m_LocalScale: {x: 2.1658382, y: 2.054129, z: 1}
   m_Children: []
   m_Father: {fileID: 5818366168005640698}
@@ -74,7 +74,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0479303, y: -0.5103924}
+  m_Offset: {x: -0.049649954, y: -0.5103924}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -85,7 +85,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1160642, y: 0.030227661}
+  m_Size: {x: 0.9209037, y: 0.030227661}
   m_EdgeRadius: 0
 --- !u!1 &5818366167818559263
 GameObject:
@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5818366167818559263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.4, y: 12.9, z: -39.098755}
+  m_LocalPosition: {x: 7.9, y: 13.5, z: -39.098755}
   m_LocalScale: {x: 2.165838, y: 2.054129, z: 1}
   m_Children: []
   m_Father: {fileID: 5818366168005640698}
@@ -195,7 +195,7 @@ LineRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_MotionVectors: 0
+  m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
@@ -222,9 +222,9 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1926083185
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -332,13 +332,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  canJump: 1
   jumpFull: 1
   h: 25
   gravity: -18
   currPowerBarVal: 0
-  nextScene: level2
+  nextScene: level11
   displacementY: 0
   forceX: 0
+  foot: {fileID: 5818366167669000843}
 --- !u!50 &5818366168005640644
 Rigidbody2D:
   serializedVersion: 4

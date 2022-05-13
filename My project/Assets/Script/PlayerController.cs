@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Spine.Unity;
+using UnityEngine.EventSystems;
+
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
@@ -34,14 +36,15 @@ public class PlayerController : MonoBehaviour
     public float minForceY;
     public float maxForceY;
     public AnimationCurve curve;
-    
-    
-    
+
+
+
     // Set power
     bool m_didJump;
     bool m_didJumpDown;
     bool m_powerSetted;
     bool maxPower;
+     public bool canJump = true;
     public bool jumpFull = true;
 
     //Parabola
@@ -60,8 +63,9 @@ public class PlayerController : MonoBehaviour
      SkeletonAnimation skeletonAnimation;
      public Spine.AnimationState spineAnimationState;
     public Spine.Skeleton skeleton;
+    public GameObject foot;
+    bool isMouseDown = false;
 
-    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -74,34 +78,47 @@ public class PlayerController : MonoBehaviour
         skeletonAnimation = GetComponent<SkeletonAnimation>();
         spineAnimationState = skeletonAnimation.AnimationState;
         skeleton = skeletonAnimation.Skeleton;
+        canJump = true;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-#if UNITY_ANDROID
-    SetPower();
-    if(Input.GetMouseButtonDown(0)){
+        if (EventSystem.current == null || EventSystem.current.IsPointerOverGameObject(-1))    // is the touch on the GUI
+            {
+                // GUI Action
+                return;
+            }
+        
+   
+     
+            SetPower();
+    if(Input.GetMouseButtonDown(0) ){
             SetPower(true);
             spineAnimationState.SetAnimation(0, holdAnimationName, false);
+            isMouseDown = true;
         }
-    if(Input.GetMouseButtonUp(0)){
+    if(Input.GetMouseButtonUp(0) && isMouseDown){
             SetPower(false);
             lr.positionCount = 0;
             spineAnimationState.SetAnimation(0, jumpStartAnimationName, false);
             spineAnimationState.AddAnimation(0, jumpUpAnimationName, false, 0);
+            isMouseDown = false;
         }
-    
+     
+
         // rend.material.mainTextureScale =
         //   new Vector2(Vector2.Distance(lr.GetPosition(0), lr.GetPosition(lr.positionCount - 1)) / lr.widthMultiplier,1);
     lr.material.mainTextureScale = new Vector2(1f / lr.startWidth, 1.0f);
     checkAnimationJump();
-    CheckJumpEnemy();
+    CheckRaycast();
+   
 
-#endif
+
     }
     void fixedUpdate(){
-        
+
     }
     void SetPower()
     {
@@ -145,8 +162,8 @@ public class PlayerController : MonoBehaviour
                 jumpForce.x = Mathf.Clamp(jumpForce.x, minForceX, maxForceX);
                 jumpForce.y = Mathf.Clamp(jumpForce.y, minForceY, maxForceY);
             }
-                           
-           
+
+
 
 
 
@@ -160,7 +177,7 @@ public class PlayerController : MonoBehaviour
                 positions[i] = tranjectory[i];
             }
             lr.SetPositions(positions);
-           
+
             float width = lr.startWidth;
             //lr.material.mainTextureScale = new Vector2(1f / lr.startWidth, 1.0f);
 
@@ -226,28 +243,33 @@ public class PlayerController : MonoBehaviour
         spineAnimationState.SetAnimation(0, idleAnimationName, true);
 
     }
-    public void CheckJumpEnemy(){
-        if(GameManager.instance.isJumpingEnemy){
-            int layerPlatform = 3;
-            int layerMaskPLatformat = 1 << layerPlatform;
-           RaycastHit2D hitBottom = Physics2D.Raycast(transform.position, Vector2.down, 1f, layerMaskPLatformat);
-           if(hitBottom.collider != null && hitBottom.collider.CompareTag("Ground")){
-                GameManager.instance.isJumpingEnemy = false;
-                if(GameManager.instance.endPoint.Length > GameManager.instance.currEndPoint + 1){
-                     GameManager.instance.currEndPoint++;
-                }
-                else{
-                    return;
-                }
-            }
-    }}
-    
- 
-    
-   
-    
- 
-   
+    public void CheckRaycast(){
+        int layerPlatform = 3;
+        int layerMaskPLatformat = 1 << layerPlatform;
+        RaycastHit2D hitBottom = Physics2D.Raycast(transform.position, Vector2.down, 1f, layerMaskPLatformat);
+    //     if(GameManager.instance.isJumpingEnemy){
+    //        if(hitBottom.collider != null && hitBottom.collider.CompareTag("Ground")){
+    //             GameManager.instance.isJumpingEnemy = false;
+    //             if(GameManager.instance.endPoint.Length > GameManager.instance.currEndPoint + 1){
+    //                  GameManager.instance.currEndPoint++;
+    //             }
+    //             else{
+    //                 return;
+    //             }
+    //         }
+    // }
+        // if(GameManager.instance.isShootingEnemyStop){
+        //     if(hitBottom.collider != null && hitBottom.collider.CompareTag("Ground")){
+        //         GameManager.instance.isShootingEnemyStop = false;
+        // }}
+    }
+
+
+
+
+
+
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag  == "Ground"){
@@ -259,11 +281,12 @@ public class PlayerController : MonoBehaviour
                 jumpForce = Vector2.zero;
                 currPowerBarVal = 0;
             }
-        }    
+        }
         if(other.gameObject.tag == "Die"){
             Die();
             //StartCoroutine(DieCouroutine());
         }
+
     //    if(other.gameObject.CompareTag("endPoint")){
     //         if(GameManager.instance.endPoint.Length > GameManager.instance.currEndPoint + 1){
     //             GameManager.instance.currEndPoint++;
@@ -272,51 +295,68 @@ public class PlayerController : MonoBehaviour
     //             return;
     //         }
     //     }
-       
+
     }
     IEnumerator DieCouroutine(){
         yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameUIManager.instance.ShowDeadPanel();
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
         }
      private void OnTriggerEnter2D(Collider2D other)
     {
-         if(other.gameObject.tag == "nextPlatform"){
+         if(other.gameObject.CompareTag("nextPlatform")){
             CamController.instance.LerpTrigeer(transform.position.x + 1.8f);
-        }    
-        if(other.gameObject.tag == "jumpHalf"){
+        }
+        if(other.gameObject.CompareTag("jumpHalf")){
             jumpFull = false;
         }
-        if(other.gameObject.tag == "jumpFull"){
+        if(other.gameObject.CompareTag("jumpFull")){
             jumpFull = true;
         }
-        if(other.gameObject.tag == "end"){
-            NextScene(nextScene);
+        if(other.gameObject.CompareTag("end")){
+            StartCoroutine(NextSceneCounter());
         }
         if(other.gameObject.CompareTag("Die")){
             Die();
-            
         }
-         
+        // if(other.gameObject.CompareTag("EnemyShooting")){
+        //     GameManager.instance.isShootingEnemy = true;
+
+        // }
+        if(other.gameObject.CompareTag("MainCamera")){
+            Die();
+        }
+
     }
-    
+
     public void DisableRigibody(){
         rb.bodyType = RigidbodyType2D.Static;
     }
     public void InvokeEnableRigigbody(){
-    
+
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
     public void EnableRigigbody(){
         Invoke("InvokeEnableRigigbody", 1f);
     }
-    private void NextScene(string nextScene){
-        SceneManager.LoadScene(nextScene);
-    }
+    
     public void Die(){
         rb.velocity = new Vector2(0, 5f);
         coll.enabled = false;
+        foot.SetActive(false);
+
         spineAnimationState.SetAnimation(0, dieAnimationName, false);
         StartCoroutine(DieCouroutine());
+        canJump = false;
+    }
+    IEnumerator NextSceneCounter(){
+        yield return new WaitForSeconds(.2f);
+        GameUIManager.instance.ShowVictoryPanel();
+        canJump = false;
+    }
+    public void SetIdleAnimationState(){
+        spineAnimationState.SetAnimation(0, idleAnimationName, true);
     }
 
 }
