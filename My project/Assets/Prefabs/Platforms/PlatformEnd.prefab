@@ -1,5 +1,60 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &820395783303168774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3889756046977932304}
+  - component: {fileID: 415019878552387422}
+  m_Layer: 3
+  m_Name: Ground
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3889756046977932304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820395783303168774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.15, y: 4.97, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4695261776015511375}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &415019878552387422
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820395783303168774}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.9586665, y: -0.3641734}
+  - {x: -0.5760289, y: -0.08888602}
+  - {x: 0.8764584, y: -0.0923816}
+  - {x: 1.1517887, y: -0.36624253}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &4695261776015511372
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +68,7 @@ GameObject:
   - component: {fileID: 4695261776015511373}
   m_Layer: 3
   m_Name: PlatformEnd
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,6 +85,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.5, z: 1}
   m_Children:
   - {fileID: 5938932622094099544}
+  - {fileID: 3889756046977932304}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,7 +153,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12530214, y: 0.033775806}
+  m_Offset: {x: -0.08879495, y: -0.08672142}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -108,7 +164,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9796339, y: 9.679225}
+  m_Size: {x: 1.9066195, y: 9.4382305}
   m_EdgeRadius: 0
 --- !u!1001 &4695261775710989492
 PrefabInstance:
@@ -131,11 +187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1388155919998437612, guid: 500521d75dc13ee4a9e583245d9e525e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.029
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 1388155919998437612, guid: 500521d75dc13ee4a9e583245d9e525e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.737
+      value: 4.723
       objectReference: {fileID: 0}
     - target: {fileID: 1388155919998437612, guid: 500521d75dc13ee4a9e583245d9e525e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -171,19 +227,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1388155919998437613, guid: 500521d75dc13ee4a9e583245d9e525e, type: 3}
       propertyPath: m_Size.x
-      value: 0.84270674
+      value: 0.7061603
       objectReference: {fileID: 0}
     - target: {fileID: 1388155919998437613, guid: 500521d75dc13ee4a9e583245d9e525e, type: 3}
       propertyPath: m_Size.y
-      value: 0.10696876
+      value: 0.057469368
       objectReference: {fileID: 0}
     - target: {fileID: 1388155919998437613, guid: 500521d75dc13ee4a9e583245d9e525e, type: 3}
       propertyPath: m_Offset.x
-      value: -0.04602799
+      value: -0.010989085
       objectReference: {fileID: 0}
     - target: {fileID: 1388155919998437613, guid: 500521d75dc13ee4a9e583245d9e525e, type: 3}
       propertyPath: m_Offset.y
-      value: 0.8438888
+      value: 0.8191391
       objectReference: {fileID: 0}
     - target: {fileID: 1388155919998437615, guid: 500521d75dc13ee4a9e583245d9e525e, type: 3}
       propertyPath: m_Name

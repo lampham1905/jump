@@ -18,6 +18,8 @@ public class ReplayBtn : Button
     }
     public override void OnPointerDown(PointerEventData eventData)
     {
+         base.OnPointerDown(eventData);
+        BgSound.Instance.PlayTap();
         GameManager.instance.ResetScene();
-}
+    }
 }

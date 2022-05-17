@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool isShootingEnemyStop = false;
     public static GameManager instance;
     bool isPaused = false;
+    public int levelCur = 0;
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -39,10 +40,12 @@ public class GameManager : MonoBehaviour
         //endPointCurrent = endPoint[currEndPoint];
     }
     public void  NextScene(){
+        BgSound.Instance.PlayTap();
         //SceneManager.LoadScene(PlayerController.instance.nextScene);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void ResetScene(){
+        BgSound.Instance.PlayTap();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         PlayerController.instance.canJump = false;
     }
@@ -50,6 +53,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
     public void ResumeGame(){
+        BgSound.Instance.PlayTap();
         Time.timeScale = 1;
+    }
+    public void AddLevel(){
+       
+        
     }
 }

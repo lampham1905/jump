@@ -85,27 +85,30 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (EventSystem.current == null || EventSystem.current.IsPointerOverGameObject(-1))    // is the touch on the GUI
+        if (EventSystem.current == null || EventSystem.current.IsPointerOverGameObject(0))    // is the touch on the GUI
             {
                 // GUI Action
                 return;
             }
         
-   
-     
-            SetPower();
+    else{
+         SetPower();
     if(Input.GetMouseButtonDown(0) ){
             SetPower(true);
             spineAnimationState.SetAnimation(0, holdAnimationName, false);
             isMouseDown = true;
         }
     if(Input.GetMouseButtonUp(0) && isMouseDown){
+            BgSound.Instance.PlayJump();
             SetPower(false);
             lr.positionCount = 0;
             spineAnimationState.SetAnimation(0, jumpStartAnimationName, false);
             spineAnimationState.AddAnimation(0, jumpUpAnimationName, false, 0);
             isMouseDown = false;
         }
+    }
+     
+           
      
 
         // rend.material.mainTextureScale =
@@ -283,6 +286,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         if(other.gameObject.tag == "Die"){
+           
             Die();
             //StartCoroutine(DieCouroutine());
         }
@@ -305,31 +309,40 @@ public class PlayerController : MonoBehaviour
         }
      private void OnTriggerEnter2D(Collider2D other)
     {
-         if(other.gameObject.CompareTag("nextPlatform")){
-            CamController.instance.LerpTrigeer(transform.position.x + 1.8f);
-        }
+        //  if(other.gameObject.CompareTag("nextPlatform")){
+        //     CamController.instance.LerpTrigeer(transform.position.x + 1.8f);
+        // }
         if(other.gameObject.CompareTag("jumpHalf")){
             jumpFull = false;
+            GameUIManager.instance.ShowLeftWind();
         }
         if(other.gameObject.CompareTag("jumpFull")){
             jumpFull = true;
+            GameUIManager.instance.ShowRightWind();
+
         }
-        if(other.gameObject.CompareTag("end")){
-            StartCoroutine(NextSceneCounter());
-        }
+        // if(other.gameObject.CompareTag("end")){
+        //     GameManager.instance.AddLevel();
+        //     StartCoroutine(NextSceneCounter());
+        // }
         if(other.gameObject.CompareTag("Die")){
+            BgSound.Instance.PlayDie();
             Die();
         }
         // if(other.gameObject.CompareTag("EnemyShooting")){
         //     GameManager.instance.isShootingEnemy = true;
 
         // }
-        if(other.gameObject.CompareTag("MainCamera")){
-            Die();
-        }
+
 
     }
-
+    public void NextLevel(){
+         GameManager.instance.AddLevel();
+        StartCoroutine(NextSceneCounter());
+    }
+    public void NextPlatform(){
+        CamController.instance.LerpTrigeer(transform.position.x + 1.8f);
+    }
     public void DisableRigibody(){
         rb.bodyType = RigidbodyType2D.Static;
     }
@@ -342,6 +355,7 @@ public class PlayerController : MonoBehaviour
     }
     
     public void Die(){
+         BgSound.Instance.PlayDie();
         rb.velocity = new Vector2(0, 5f);
         coll.enabled = false;
         foot.SetActive(false);

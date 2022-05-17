@@ -18,8 +18,9 @@ public class ReusmeBtn : Button
     }
     public override void OnPointerDown(PointerEventData eventData)
     {
-        base.OnPointerDown(eventData);
         
+        base.OnPointerDown(eventData);
+        BgSound.Instance.PlayTap();
         GameUIManager.instance.HidePauseGamePanel();
         Time.timeScale = 1;
         //PlayerController.instance.canJump = true;

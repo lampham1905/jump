@@ -43,4 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece32d71784e4df49a72fd1d256f575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GamePlayPanel: {fileID: 0}
   VictoryPanel: {fileID: 0}
+  DeadPanel: {fileID: 0}
+  PausePanel: {fileID: 0}
+  SettingPanel: {fileID: 0}
+  LevelText: {fileID: 0}
