@@ -19,7 +19,9 @@ public class SettingBtn : Button
     }
      public override void OnPointerDown(PointerEventData eventData)
     {
-        BgSound.Instance.PlayTap();
+        if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            BgSound.Instance.PlayTap();
+        }
         base.OnPointerDown(eventData);
         Time.timeScale = 0;
         GameUIManager.instance.ShowSettingPanel();

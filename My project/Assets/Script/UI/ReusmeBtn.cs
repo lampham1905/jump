@@ -20,7 +20,9 @@ public class ReusmeBtn : Button
     {
         
         base.OnPointerDown(eventData);
-        BgSound.Instance.PlayTap();
+          if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            BgSound.Instance.PlayTap();
+        }
         GameUIManager.instance.HidePauseGamePanel();
         Time.timeScale = 1;
         //PlayerController.instance.canJump = true;

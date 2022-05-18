@@ -824,6 +824,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1419706390}
     - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
+      propertyPath: musicOff
+      value: 
+      objectReference: {fileID: 1419706392}
+    - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
+      propertyPath: soundOff
+      value: 
+      objectReference: {fileID: 1419706393}
+    - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
       propertyPath: DeadPanel
       value: 
       objectReference: {fileID: 457622641}
@@ -1014,7 +1022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5563639146410108694, guid: a82c90729161e404d8b68a31ab903724, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.533784
+      value: -2.224
       objectReference: {fileID: 0}
     - target: {fileID: 5563639146410108694, guid: a82c90729161e404d8b68a31ab903724, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1562,7 +1570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5563639146410108694, guid: a82c90729161e404d8b68a31ab903724, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.19
+      value: -1.923
       objectReference: {fileID: 0}
     - target: {fileID: 5563639146410108694, guid: a82c90729161e404d8b68a31ab903724, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1639,6 +1647,14 @@ PrefabInstance:
     - target: {fileID: 2140443567, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HideSettingsPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2346279919866476233, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 542264480}
+    - target: {fileID: 2346279919866476233, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnOffMusic
       objectReference: {fileID: 0}
     - target: {fileID: 2484130887997297440, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1744,6 +1760,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3531446439611853626, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 542264480}
+    - target: {fileID: 3531446439611853626, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnOffSound
+      objectReference: {fileID: 0}
     - target: {fileID: 8117414735044198017, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1778,6 +1802,16 @@ GameObject:
 --- !u!1 &1419706391 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 233316533, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+  m_PrefabInstance: {fileID: 1419706387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1419706392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 275915097, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+  m_PrefabInstance: {fileID: 1419706387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1419706393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1141346692, guid: d77a6454006038c4aaa37c683279d150, type: 3}
   m_PrefabInstance: {fileID: 1419706387}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1481889024

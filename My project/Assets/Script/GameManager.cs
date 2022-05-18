@@ -40,12 +40,16 @@ public class GameManager : MonoBehaviour
         //endPointCurrent = endPoint[currEndPoint];
     }
     public void  NextScene(){
-        BgSound.Instance.PlayTap();
+        if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            BgSound.Instance.PlayTap();
+        }
         //SceneManager.LoadScene(PlayerController.instance.nextScene);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void ResetScene(){
-        BgSound.Instance.PlayTap();
+          if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            BgSound.Instance.PlayTap();
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         PlayerController.instance.canJump = false;
     }
@@ -53,7 +57,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
     public void ResumeGame(){
-        BgSound.Instance.PlayTap();
+          if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            BgSound.Instance.PlayTap();
+        }
         Time.timeScale = 1;
     }
     public void AddLevel(){

@@ -22,7 +22,9 @@ public class PauseBtn : Button
     public override void OnPointerDown(PointerEventData eventData)
     {
          base.OnPointerDown(eventData);
-        BgSound.Instance.PlayTap();
+         if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            BgSound.Instance.PlayTap();
+        }
        
         Time.timeScale = 0;
         GameUIManager.instance.ShowPausePanel();

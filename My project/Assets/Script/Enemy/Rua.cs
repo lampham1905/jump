@@ -98,7 +98,9 @@ public class Rua : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("foot")){
-            
+            if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+                BgSound.Instance.PlayHit();
+            }
             PlayerController.instance.DisableRigibody();
             PlayerController.instance.EnableRigigbody();
             FolowRoute.ins.JumpToEnd(endPoint);

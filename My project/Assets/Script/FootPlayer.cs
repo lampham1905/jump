@@ -17,7 +17,9 @@ public class FootPlayer : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other) {
        if(other.gameObject.CompareTag("end")){
+            if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
             BgSound.Instance.PlayWind();
+        }
             PlayerController.instance.NextLevel();
           
        }

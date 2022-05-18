@@ -14,6 +14,8 @@ public class GameUIManager : MonoBehaviour
     public GameObject SettingPanel;
     public GameObject LeftWind;
     public GameObject RightWind;
+    public GameObject soundOff;
+    public GameObject musicOff;
     public static GameUIManager instance;
      bool isShowSettingPanel = false;
      public TextMeshProUGUI LevelText;
@@ -27,6 +29,9 @@ public class GameUIManager : MonoBehaviour
         
         GamePlayPanel.SetActive(true);
         LevelText.text = "LEVEL " + (SceneManager.GetActiveScene().buildIndex).ToString();
+        CheckMusicStart();
+        CheckSoundStart();
+
     }
 
     // Update is called once per frame
@@ -76,5 +81,49 @@ public class GameUIManager : MonoBehaviour
     public void ShowRightWind(){
         LeftWind.SetActive(false);
         RightWind.SetActive(true);
+    }
+    public void TurnOffSound(){
+        int isSoundOn = PlayerPrefs.GetInt("isSoundOn", 1);
+        if(isSoundOn == 1){
+             soundOff.SetActive(true);
+             PlayerPrefs.SetInt("isSoundOn", 0);
+             PlayerPrefs.Save();
+        }
+        if(isSoundOn == 0){
+             soundOff.SetActive(false);
+             PlayerPrefs.SetInt("isSoundOn", 1);
+             PlayerPrefs.Save();
+        }
+    }
+    public void CheckSoundStart(){
+        if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            soundOff.SetActive(false);
+        }
+        else{
+            soundOff.SetActive(true);
+        }
+    }
+    public void TurnOffMusic(){
+        int isMusicOn = PlayerPrefs.GetInt("isMusicOn", 1);
+        if(isMusicOn == 1){
+             musicOff.SetActive(true);
+             BgSound.Instance.PauseMusic();
+             PlayerPrefs.SetInt("isMusicOn", 0);
+             PlayerPrefs.Save();
+        }
+        if(isMusicOn == 0){
+             musicOff.SetActive(false);
+             BgSound.Instance.PlayMusic();
+             PlayerPrefs.SetInt("isMusicOn", 1);
+             PlayerPrefs.Save();
+        }
+    }
+    public void CheckMusicStart(){
+        if(PlayerPrefs.GetInt("isMusicOn", 1) == 1){
+            musicOff.SetActive(false);
+        }
+        else{
+               musicOff.SetActive(true);
+        }
     }
 }

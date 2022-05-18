@@ -18,7 +18,9 @@ public class HomeManager : MonoBehaviour
     }
     public void LoadSceneCurrent(){
         
-        BgSound.Instance.PlayTap();
+          if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            BgSound.Instance.PlayTap();
+        }
         int LevelCur = PlayerPrefs.GetInt("levelCur", 1);
         SceneManager.LoadScene("level" + LevelCur);
     }

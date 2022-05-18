@@ -19,7 +19,9 @@ public class HideSettingBtn : Button
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
-        BgSound.Instance.PlayTap();
+          if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            BgSound.Instance.PlayTap();
+        }
         Time.timeScale = 1;
         GameUIManager.instance.HideSettingsPanel();
         //PlayerController.instance.canJump = true;

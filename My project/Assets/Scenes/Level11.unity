@@ -894,6 +894,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 233316533, guid: d77a6454006038c4aaa37c683279d150, type: 3}
   m_PrefabInstance: {fileID: 631236930}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &631236935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 275915097, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+  m_PrefabInstance: {fileID: 631236930}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &631236936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1141346692, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+  m_PrefabInstance: {fileID: 631236930}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &637083976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1500,6 +1510,14 @@ PrefabInstance:
       propertyPath: LeftWind
       value: 
       objectReference: {fileID: 631236933}
+    - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
+      propertyPath: musicOff
+      value: 
+      objectReference: {fileID: 631236935}
+    - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
+      propertyPath: soundOff
+      value: 
+      objectReference: {fileID: 631236936}
     - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
       propertyPath: DeadPanel
       value: 

@@ -11,16 +11,21 @@ public class BgSound : MonoBehaviour
     private AudioSource windSound;
     private AudioSource dieSound;
     private AudioSource hitSound;
-    
+    private AudioSource jumpDownSound;
     public AudioSource musicSource;
     void Start()
     {
-        musicSource.Play();
+        
+        if(PlayerPrefs.GetInt("isMusicOn", 1) == 1){
+            PlayMusic();
+        }
+
         tapSound = mysounds[0];
         jumpSound = mysounds[1];
         windSound = mysounds[2];
         dieSound = mysounds[3];
         hitSound = mysounds[4];
+        jumpDownSound = mysounds[5];
     }
 
     // Update is called once per frame
@@ -49,14 +54,24 @@ public class BgSound : MonoBehaviour
     public void PlayMusic(){
             musicSource.Play();
        }
+    public void PauseMusic(){
+        musicSource.Pause();
+    }
+    public void ResumeMusic(){
+        musicSource.UnPause();
+    }
+    
     public void PlayTap(){
             tapSound.Play();
     }
     public void PlayWind(){    
             windSound.Play();
     }
-    public void PlayJump(){
+    public void PlayJumpUp(){
             jumpSound.Play();
+    }
+    public void PlayJumpDown(){
+            jumpDownSound.Play();
     }
     public void PlayHit(){
         hitSound.Play();
@@ -64,4 +79,6 @@ public class BgSound : MonoBehaviour
     public void PlayDie(){
         dieSound.Play();
     }
+    
+  
 }

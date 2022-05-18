@@ -36,5 +36,8 @@ public  class SaveData : MonoBehaviour
         }
         PlayerPrefs.Save();
     }
+    public void CheckMusicOn(){
+        
+    }
 
 }

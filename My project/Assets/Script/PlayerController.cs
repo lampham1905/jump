@@ -99,7 +99,9 @@ public class PlayerController : MonoBehaviour
             isMouseDown = true;
         }
     if(Input.GetMouseButtonUp(0) && isMouseDown){
-            BgSound.Instance.PlayJump();
+            if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+                BgSound.Instance.PlayJumpUp();
+            }
             SetPower(false);
             lr.positionCount = 0;
             spineAnimationState.SetAnimation(0, jumpStartAnimationName, false);
@@ -276,6 +278,9 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag  == "Ground"){
+            if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+                BgSound.Instance.PlayJumpDown();
+            }
             if(m_didJump){
                 m_didJump = false;
                 if(rb){
@@ -326,7 +331,7 @@ public class PlayerController : MonoBehaviour
         //     StartCoroutine(NextSceneCounter());
         // }
         if(other.gameObject.CompareTag("Die")){
-            BgSound.Instance.PlayDie();
+            //BgSound.Instance.PlayDie();
             Die();
         }
         // if(other.gameObject.CompareTag("EnemyShooting")){
@@ -355,7 +360,9 @@ public class PlayerController : MonoBehaviour
     }
     
     public void Die(){
-         BgSound.Instance.PlayDie();
+        if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            BgSound.Instance.PlayDie();
+        }
         rb.velocity = new Vector2(0, 5f);
         coll.enabled = false;
         foot.SetActive(false);

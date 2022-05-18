@@ -1271,6 +1271,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2346279919866476233, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1034672080}
+    - target: {fileID: 2346279919866476233, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnOffMusic
+      objectReference: {fileID: 0}
     - target: {fileID: 2484130887997297440, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1363,6 +1371,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3531446439611853626, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1034672080}
+    - target: {fileID: 3531446439611853626, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnOffSound
+      objectReference: {fileID: 0}
     - target: {fileID: 8117414735044198017, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1405,6 +1421,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &603963621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 275915097, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+  m_PrefabInstance: {fileID: 603963614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &603963622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1141346692, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+  m_PrefabInstance: {fileID: 603963614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &623315235 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5563639146410108694, guid: a82c90729161e404d8b68a31ab903724, type: 3}
@@ -1949,6 +1975,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.76
       objectReference: {fileID: 0}
+    - target: {fileID: 5818366168005640699, guid: 659f8a3d4eb191440bb8c962d051ba11, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5685aae0f987cfe46840a87c6eb42ca2, type: 2}
     - target: {fileID: 5818366168005640701, guid: 659f8a3d4eb191440bb8c962d051ba11, type: 3}
       propertyPath: nextScene
       value: level15
@@ -2523,6 +2553,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2001162947}
     - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
+      propertyPath: musicOff
+      value: 
+      objectReference: {fileID: 603963621}
+    - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
+      propertyPath: soundOff
+      value: 
+      objectReference: {fileID: 603963622}
+    - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
       propertyPath: DeadPanel
       value: 
       objectReference: {fileID: 603963616}
@@ -2552,6 +2590,17 @@ PrefabInstance:
       objectReference: {fileID: 603963618}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
+--- !u!114 &1034672080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
+  m_PrefabInstance: {fileID: 1034672079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece32d71784e4df49a72fd1d256f575e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1056707236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1429659876963605959, guid: 0b070dc9cae7dc949a75915488c79667, type: 3}
@@ -3626,7 +3675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5563639146410108694, guid: a82c90729161e404d8b68a31ab903724, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.53721964
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5563639146410108694, guid: a82c90729161e404d8b68a31ab903724, type: 3}
       propertyPath: m_LocalPosition.z
