@@ -268,13 +268,6 @@ public class PlayerController : MonoBehaviour
         //         GameManager.instance.isShootingEnemyStop = false;
         // }}
     }
-
-
-
-
-
-
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag  == "Ground"){

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CamController : MonoBehaviour
 {
     public static CamController instance;
+    private Camera cam;
      private void Awake()
     {
         if(instance == null)
@@ -22,13 +23,14 @@ public class CamController : MonoBehaviour
     float m_lerpXDist;
     void Start()
     {
-        
+        cam = GetComponent<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
         MoveLeft();
+        CheckScreen();
     }
     private void MoveLeft(){
         float xPos = transform.position.x;
@@ -44,6 +46,20 @@ public class CamController : MonoBehaviour
     {
         m_canLerp = true;
         m_lerpXDist = dist;
+    }
+    private void CheckScreen()
+    {
+        if(cam.aspect > 0.5f)
+        {
+            cam.orthographicSize = 5f;
+            
+
+        }
+        if (cam.aspect <.5f)
+        {
+            cam.orthographicSize = 5.2f;
+           
+        } 
     }
      
 }
