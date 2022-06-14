@@ -97,5 +97,13 @@ public class HomeGUI : MonoBehaviour
              SoundOff.SetActive(true);
          }
    }
+   public void EasyLevel(){
+        PlayerPrefs.SetInt("dokho", 0); 
+        PlayerPrefs.Save();      
+   }
+   public void DifficultLevel(){
+       PlayerPrefs.SetInt("dokho", 1); 
+        PlayerPrefs.Save();
+   }
    
 }

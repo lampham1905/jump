@@ -12,7 +12,13 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     bool isPaused = false;
     public int levelCur = 0;
+    public bool isAIDead = false;
+    public Transform spawnAI;
+    public GameObject AI;
+    public Transform[] platformPositionsList;
     private void Awake() {
+        //spawnAI  =this.gameObject.transform;
+        
         if (instance == null) {
             instance = this;
         }
@@ -29,6 +35,8 @@ public class GameManager : MonoBehaviour
     {
         //currEndPoint = -1;
         //endPointCurrent = endPoint[currEndPoint];
+        //Instantiate(AI, new Vector3(spawnAI.position.x, spawnAI.position.y, 0), Quaternion.identity);
+        
     }
 
     // Update is called once per frame
@@ -66,4 +74,13 @@ public class GameManager : MonoBehaviour
        
         
     }
+    public void SpawnAIPlayer(){
+        StartCoroutine(SpawnAI());
+    }
+    IEnumerator SpawnAI(){
+        yield return new WaitForSeconds(.5f);
+        Instantiate(AI, spawnAI.position, Quaternion.identity);
+    }
+    
+    
 }

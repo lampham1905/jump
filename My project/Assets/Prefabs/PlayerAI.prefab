@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5818366167396077361}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,8 +40,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5818366167669000852}
   - component: {fileID: 5818366167669000853}
-  - component: {fileID: 8729025307725233516}
-  m_Layer: 6
+  - component: {fileID: 2840874409879291874}
+  m_Layer: 7
   m_Name: Foot
   m_TagString: foot
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06093043, y: -0.5103924}
+  m_Offset: {x: 0.06608623, y: -0.5103924}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -86,9 +86,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.60981476, y: 0.030227661}
+  m_Size: {x: 0.62012637, y: 0.030227661}
   m_EdgeRadius: 0
---- !u!114 &8729025307725233516
+--- !u!114 &2840874409879291874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5818366167669000843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c735631f8b22d64fa02251df7b8c5d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a6af263475e66a4fbf356b720cda256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5818366167818559263
@@ -109,7 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5818366167818559256}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,15 +140,16 @@ GameObject:
   m_Component:
   - component: {fileID: 5818366168005640698}
   - component: {fileID: 5818366168005640702}
-  - component: {fileID: 5818366168005640701}
   - component: {fileID: 5818366168005640644}
   - component: {fileID: 5818366168005640645}
   - component: {fileID: 5818366168005640699}
   - component: {fileID: 5818366168005640697}
   - component: {fileID: 5818366168005640696}
   - component: {fileID: 1499502719}
-  m_Layer: 6
-  m_Name: Player
+  - component: {fileID: -1530849047997462115}
+  - component: {fileID: 8903171035595295832}
+  m_Layer: 7
+  m_Name: PlayerAI
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +179,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5818366168005640700}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -270,64 +271,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &5818366168005640701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5818366168005640700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02bbf0432dff62a41b2074561c7d8ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idleAnimationName: idle
-  dieAnimationName: die
-  holdAnimationName: jump_hold
-  jumpStartAnimationName: jump_start
-  jumpUpAnimationName: jump_up
-  jumpDownAnimationName: jump_down
-  jumpEndAnimationName: jump_end
-  jumpForce: {x: 0, y: 0}
-  jumpForceUp: {x: 2, y: 11}
-  minForceX: 2.5
-  maxForceX: 5.5
-  minForceY: 6
-  maxForceY: 15
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1.0295854
-      value: 0.023079127
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  canJump: 1
-  jumpFull: 1
-  h: 25
-  gravity: -18
-  currPowerBarVal: 0
-  nextScene: level2
-  displacementY: 0
-  forceX: 0
-  foot: {fileID: 5818366167669000843}
 --- !u!50 &5818366168005640644
 Rigidbody2D:
   serializedVersion: 4
@@ -468,3 +411,65 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0062572956, y: 2.6919584}
   m_Size: {x: 1.7729008, y: 5.5908146}
   m_Direction: 0
+--- !u!114 &-1530849047997462115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5818366168005640700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f894d3c4935d440ba34856248c60c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleAnimationName: idle
+  dieAnimationName: die
+  holdAnimationName: jump_hold
+  jumpStartAnimationName: jump_start
+  jumpUpAnimationName: jump_up
+  jumpDownAnimationName: jump_down
+  jumpEndAnimationName: jump_end
+  jumpForce: {x: 0, y: 0}
+  jumpForceUp: {x: 2, y: 11}
+  minForceX: 2.5
+  maxForceX: 5.5
+  minForceY: 6
+  maxForceY: 15
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  jumpFull: 1
+  h: 25
+  gravity: -18
+  currPowerBarVal: 0
+  nextScene: Level2
+  displacementY: 0
+  forceX: 0
+  foot: {fileID: 5818366167669000843}
+  isAIJumpHold: 0
+  isAIJumpStart: 0
+  PlatformPosition: {fileID: 0}
+  platFormPositionList:
+  - {fileID: 0}
+  - {fileID: 0}
+  platformPositionCur: {fileID: 0}
+  indexPlaotformPositionCur: 0
+  isCompelete: 0
+--- !u!114 &8903171035595295832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5818366168005640700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf6d4b468ae3ee4f8850d99a361f73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorAI: {r: 0.98039216, g: 0.08627451, b: 0.13718905, a: 0}
+  colorProperty: _Color

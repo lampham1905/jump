@@ -17,6 +17,7 @@ TagManager:
   - DestroyBullet
   - EnemyShooting
   - Muc
+  - DieOverCamera
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - Platform
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - PlayerAI
   - 
   - 
   - 

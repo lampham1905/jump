@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,18 +6,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Spine.Unity;
 using UnityEngine.EventSystems;
+using Random = UnityEngine.Random;
 
-public class PlayerController : MonoBehaviour
+public class PlayerAI : MonoBehaviour
 {
-    public static PlayerController instance;
+    public static PlayerAI instance;
     void Awake(){
-        if(instance == null){
             instance = this;
-        }
-        else{
-            Destroy(gameObject);
-            return;
-        }
     }
     [Header("Animation")]
     [SpineAnimation] public string idleAnimationName;
@@ -44,7 +40,7 @@ public class PlayerController : MonoBehaviour
     bool m_didJumpDown;
     bool m_powerSetted;
     bool maxPower;
-     public bool canJump = true;
+   
     public bool jumpFull = true;
 
     //Parabola
@@ -65,9 +61,19 @@ public class PlayerController : MonoBehaviour
     public Spine.Skeleton skeleton;
     public GameObject foot;
     bool isMouseDown = false;
+    public bool isAIJumpHold =false;
+    public bool isAIJumpStart = false;
+    public GameObject PlatformPosition;
+    public Transform[] platFormPositionList;
+    public Transform platformPositionCur;
+    public int indexPlaotformPositionCur = 0;
+    public bool isCompelete = false;
+    Transform currentPosition;
+    public int ramdomAIDieValue;
 
     void Start()
     {
+        platFormPositionList = GameManager.instance.platformPositionsList;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         lr = GetComponent<LineRenderer>();
@@ -78,49 +84,58 @@ public class PlayerController : MonoBehaviour
         skeletonAnimation = GetComponent<SkeletonAnimation>();
         spineAnimationState = skeletonAnimation.AnimationState;
         skeleton = skeletonAnimation.Skeleton;
-        canJump = true;
         Time.timeScale = 1;
+        // AI Jump Hold
+        if(PlayerPrefs.GetInt("dokho") == 0){
+            StartCoroutine(AIStartHold(1f));
+        }
+        else {
+            StartCoroutine(AIStartHold(0.3f));
+        }
+       
+    }
+    IEnumerator AIStartHold(float timeWaitToHold){
+        yield return new WaitForSeconds(timeWaitToHold);
+        isAIJumpHold = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (EventSystem.current == null || EventSystem.current.IsPointerOverGameObject(0))    // is the touch on the GUI
-            {
-                // GUI Action
-                return;
-            }
+        Debug.Log(ramdomAIDieValue);
+        //Debug.Log(PlayerPrefs.GetInt("dokho"));
+        if(indexPlaotformPositionCur <  platFormPositionList.Length){
+            platformPositionCur = platFormPositionList[indexPlaotformPositionCur];
+        }
         
-    else{
          SetPower();
-    if(Input.GetMouseButtonDown(0) ){
+    if(isAIJumpHold && !isCompelete){
             SetPower(true);
             spineAnimationState.SetAnimation(0, holdAnimationName, false);
             isMouseDown = true;
         }
-    if(Input.GetMouseButtonUp(0) && isMouseDown){
+    if(isAIJumpStart){
             if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
-                BgSound.Instance.PlayJumpUp();
+                //BgSound.Instance.PlayJumpUp();
             }
             SetPower(false);
             lr.positionCount = 0;
             spineAnimationState.SetAnimation(0, jumpStartAnimationName, false);
             spineAnimationState.AddAnimation(0, jumpUpAnimationName, false, 0);
             isMouseDown = false;
+            isAIJumpHold = false;
         }
-    }
-     
-           
-     
-
         // rend.material.mainTextureScale =
         //   new Vector2(Vector2.Distance(lr.GetPosition(0), lr.GetPosition(lr.positionCount - 1)) / lr.widthMultiplier,1);
-    lr.material.mainTextureScale = new Vector2(1f / lr.startWidth, 1.0f);
-    checkAnimationJump();
-    CheckRaycast();
-   
+        lr.material.mainTextureScale = new Vector2(1f / lr.startWidth, 1.0f);
+        checkAnimationJump();
+        CheckRaycast();
 
-
+    }
+    private void CheckCompelete(){
+        if(isCompelete){
+            spineAnimationState.SetAnimation(0, idleAnimationName, true);
+        }
     }
     void fixedUpdate(){
 
@@ -175,7 +190,7 @@ public class PlayerController : MonoBehaviour
 
             // tranjectory line
             Vector2 StartTranjectory = new Vector2(transform.position.x, transform.position.y + .5f);
-            Vector2[] tranjectory = Plot(rb, StartTranjectory, jumpForce, 500);
+            Vector2[] tranjectory = Plot(rb, StartTranjectory, jumpForce, 450);
             lr.positionCount = tranjectory.Length;
             Vector3[] positions = new Vector3[tranjectory.Length];
             for(int i = 0; i < tranjectory.Length; i++)
@@ -187,6 +202,41 @@ public class PlayerController : MonoBehaviour
 
             float width = lr.startWidth;
             //lr.material.mainTextureScale = new Vector2(1f / lr.startWidth, 1.0f);
+            if(PlayerPrefs.GetInt("dokho") == 1){
+                if(platformPositionCur != null){
+                for (int i = 0; i < 450; i++){
+                if(Math.Abs (tranjectory[i].x -  platformPositionCur.transform.position.x) < 0.02  && Math.Abs (tranjectory[i].y - platformPositionCur.transform.position.y) < 0.02 ){
+                    Debug.Log(tranjectory[i].x);
+                    isAIJumpStart = true;
+                }
+            }
+          }
+         }
+         if(PlayerPrefs.GetInt("dokho") == 0){
+             if(platformPositionCur != null){
+                 int ramdomAIDie = Random.Range(0, 2);
+                 ramdomAIDieValue = ramdomAIDie;
+                 if(ramdomAIDie == 1){
+                     for (int i = 0; i < 450; i++){
+                        if(Math.Abs (tranjectory[i].x -  platformPositionCur.transform.position.x) < 0.02  && Math.Abs (tranjectory[i].y - platformPositionCur.transform.position.y) < 0.02 ){
+                         //Debug.Log(tranjectory[i].x);
+                        isAIJumpStart = true;
+                }
+            }
+                 }
+                 else{
+                     for (int i = 0; i < 450; i++){
+                        if(Math.Abs (tranjectory[i].x -  platformPositionCur.transform.position.x) < 0.1  && Math.Abs (tranjectory[i].y - platformPositionCur.transform.position.y) < 0.1 ){
+                        //Debug.Log(tranjectory[i].x);
+                        isAIJumpStart = true;
+                }
+            }
+                 }
+             }
+         }
+          
+
+            
 
         }
     }
@@ -274,7 +324,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.tag  == "Ground"){
             if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
-                BgSound.Instance.PlayJumpDown();
+                //BgSound.Instance.PlayJumpDown();
             }
             if(m_didJump){
                 m_didJump = false;
@@ -283,6 +333,14 @@ public class PlayerController : MonoBehaviour
                 }
                 jumpForce = Vector2.zero;
                 currPowerBarVal = 0;
+                isAIJumpStart = false;
+                if(PlayerPrefs.GetInt("dokho") == 0){
+                    StartCoroutine(AIStartHold(1f));
+                }
+                else{
+                    StartCoroutine(AIStartHold(0.3f));
+                }
+                indexPlaotformPositionCur++;
             }
         }
         if(other.gameObject.tag == "Die"){
@@ -302,9 +360,9 @@ public class PlayerController : MonoBehaviour
 
     }
     IEnumerator DieCouroutine(){
+        //GameManager.instance.isAIDead = true;
+        GameManager.instance.SpawnAIPlayer();
         yield return new WaitForSeconds(.5f);
-        GameUIManager.instance.ShowDeadPanel();
-        yield return new WaitForSeconds(3f);
         Destroy(gameObject);
         }
      private void OnTriggerEnter2D(Collider2D other)
@@ -325,10 +383,7 @@ public class PlayerController : MonoBehaviour
         //     GameManager.instance.AddLevel();
         //     StartCoroutine(NextSceneCounter());
         // }
-        if(other.gameObject.CompareTag("Die")){
-            //BgSound.Instance.PlayDie();
-            Die();
-        }
+       
         // if(other.gameObject.CompareTag("EnemyShooting")){
         //     GameManager.instance.isShootingEnemy = true;
 
@@ -336,13 +391,17 @@ public class PlayerController : MonoBehaviour
 
 
     }
-    public void NextLevel(){
-         GameManager.instance.AddLevel();
-        StartCoroutine(NextSceneCounter());
+    private void OnTriggerStay2D(Collider2D other) {
+         if(other.gameObject.CompareTag("Die")){
+            //BgSound.Instance.PlayDie();
+            Die();
+        }
     }
-    public void NextPlatform(){
-        CamController.instance.LerpTrigeer(transform.position.x + 1.8f);
-    }
+    // public void NextLevel(){
+    //      GameManager.instance.AddLevel();
+    //     StartCoroutine(NextSceneCounter());
+    // }
+   
     public void DisableRigibody(){
         rb.bodyType = RigidbodyType2D.Static;
     }
@@ -356,20 +415,20 @@ public class PlayerController : MonoBehaviour
     
     public void Die(){
         if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
-            BgSound.Instance.PlayDie();
+            //BgSound.Instance.PlayDie();
         }
-        rb.velocity = new Vector2(0, 5f);
-        coll.enabled = false;
         foot.SetActive(false);
-
+        rb.velocity = new Vector2(0, 8f);
+        coll.enabled = false;
         spineAnimationState.SetAnimation(0, dieAnimationName, false);
         StartCoroutine(DieCouroutine());
-        canJump = false;
+        
+       
     }
     IEnumerator NextSceneCounter(){
         yield return new WaitForSeconds(.2f);
         GameUIManager.instance.ShowVictoryPanel();
-        canJump = false;
+       
     }
     public void SetIdleAnimationState(){
         spineAnimationState.SetAnimation(0, idleAnimationName, true);

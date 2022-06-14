@@ -62,27 +62,20 @@ namespace Spine.Unity.Examples {
 			while (true) {
 
 				yield return new WaitForSeconds(1f);
-
 				// Play freeze animation
 				state.SetAnimation(0, freeze, false);
 				yield return new WaitForSeconds(freezePoint);
-
 				// Freeze effects
 				particles.Play();
 				block.SetColor(colorProperty, freezeColor);
 				block.SetColor(blackTintProperty, freezeBlackColor);
 				meshRenderer.SetPropertyBlock(block);
-
-
 				yield return new WaitForSeconds(2f);
-
 				// Return to Idle
 				state.SetAnimation(0, idle, true);
 				block.SetColor(colorProperty, Color.white);
 				block.SetColor(blackTintProperty, Color.black);
 				meshRenderer.SetPropertyBlock(block);
-
-
 				yield return null;
 			}
 		}
