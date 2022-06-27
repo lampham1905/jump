@@ -1,0 +1,38 @@
+eagle.png
+size:412,528
+filter:Linear,Linear
+pma:true
+body
+bounds:2,194,237,117
+eyes1
+bounds:355,71,31,29
+offsets:1,0,32,29
+eyes2
+bounds:355,102,38,29
+offsets:2,1,41,31
+foot in
+bounds:244,440,163,84
+foot on
+bounds:244,347,159,91
+head
+bounds:244,216,147,129
+offsets:1,1,150,132
+in wing copy
+bounds:2,2,190,230
+offsets:5,22,293,252
+rotate:90
+neb-below
+bounds:355,133,31,41
+offsets:2,4,34,46
+rotate:90
+neb_on
+bounds:355,166,48,53
+offsets:1,1,50,56
+rotate:90
+on wing
+bounds:2,313,240,211
+offsets:91,75,411,286
+tail
+bounds:241,15,199,112
+offsets:0,0,199,120
+rotate:90

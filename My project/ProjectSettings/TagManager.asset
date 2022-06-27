@@ -18,6 +18,8 @@ TagManager:
   - EnemyShooting
   - Muc
   - DieOverCamera
+  - footAI
+  - PlayerAI
   layers:
   - Default
   - TransparentFX

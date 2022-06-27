@@ -1,0 +1,60 @@
+{ "skeleton": { "images": "D:/Animation/New folder/Enemy/octopus/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "suc_tu_2", "bone": "root", "attachment": "suc_tu_2" },
+	{ "name": "suc_tu_4", "bone": "root", "attachment": "suc_tu_4" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "suc_tu_3_2", "bone": "root", "attachment": "suc_tu_3_2" },
+	{ "name": "suc_tu_3", "bone": "root", "attachment": "suc_tu_3" },
+	{ "name": "suc_tu_1_2", "bone": "root", "attachment": "suc_tu_1_2" },
+	{ "name": "suc_tu_1", "bone": "root", "attachment": "suc_tu_1" },
+	{ "name": "Layer 4", "bone": "root", "attachment": "Layer 4" },
+	{ "name": "eyes", "bone": "root", "attachment": "eyes" },
+	{ "name": "eyes_2", "bone": "root", "attachment": "eyes_2" },
+	{ "name": "eyes_3", "bone": "root", "attachment": "eyes_3" },
+	{ "name": "mouth_front", "bone": "root", "attachment": "mouth_front" }
+],
+"skins": {
+	"default": {
+		"suc_tu_2": {
+			"suc_tu_2": { "x": 340.5, "y": -375.5, "width": 141, "height": 115 }
+		},
+		"suc_tu_4": {
+			"suc_tu_4": { "x": 123, "y": -393.5, "width": 120, "height": 109 }
+		},
+		"body": {
+			"body": { "x": 250.5, "y": -273.5, "width": 301, "height": 289 }
+		},
+		"suc_tu_3_2": {
+			"suc_tu_3_2": { "x": 197, "y": -426, "width": 90, "height": 88 }
+		},
+		"suc_tu_3": {
+			"suc_tu_3": { "x": 170.5, "y": -420, "width": 81, "height": 104 }
+		},
+		"suc_tu_1_2": {
+			"suc_tu_1_2": { "x": 266.5, "y": -415, "width": 77, "height": 100 }
+		},
+		"suc_tu_1": {
+			"suc_tu_1": { "x": 293, "y": -411.5, "width": 94, "height": 113 }
+		},
+		"Layer 4": {
+			"Layer 4": { "x": 158.5, "y": -115.5, "width": 123, "height": 51 }
+		},
+		"eyes": {
+			"eyes": { "x": 172.5, "y": -283, "width": 93, "height": 42 }
+		},
+		"eyes_2": {
+			"eyes_2": { "x": 165, "y": -283.5, "width": 92, "height": 55 }
+		},
+		"eyes_3": {
+			"eyes_3": { "x": 165.5, "y": -284, "width": 81, "height": 36 }
+		},
+		"mouth_front": {
+			"mouth_front": { "x": 142, "y": -331.5, "width": 52, "height": 75 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

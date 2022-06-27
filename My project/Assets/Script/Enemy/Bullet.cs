@@ -28,6 +28,9 @@ public class Bullet : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             Destroy(gameObject);
         }
+        if(other.gameObject.CompareTag("PlayerAI")){
+            Destroy(gameObject);
+        }
     }
     IEnumerator DestroyBullet(){
         yield return new WaitForSeconds(1f);

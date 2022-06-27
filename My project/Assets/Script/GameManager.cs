@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public Transform spawnAI;
     public GameObject AI;
     public Transform[] platformPositionsList;
+    public bool isCompelete = false;
     private void Awake() {
         //spawnAI  =this.gameObject.transform;
         
@@ -36,7 +37,9 @@ public class GameManager : MonoBehaviour
         //currEndPoint = -1;
         //endPointCurrent = endPoint[currEndPoint];
         //Instantiate(AI, new Vector3(spawnAI.position.x, spawnAI.position.y, 0), Quaternion.identity);
-        
+        if(PlayerPrefs.GetInt("Mode") == 1){
+            Instantiate(AI, spawnAI.position, Quaternion.identity);
+        }
     }
 
     // Update is called once per frame

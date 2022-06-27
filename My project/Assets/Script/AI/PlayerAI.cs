@@ -102,7 +102,7 @@ public class PlayerAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ramdomAIDieValue);
+        //Debug.Log(ramdomAIDieValue);
         //Debug.Log(PlayerPrefs.GetInt("dokho"));
         if(indexPlaotformPositionCur <  platFormPositionList.Length){
             platformPositionCur = platFormPositionList[indexPlaotformPositionCur];

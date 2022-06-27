@@ -13,7 +13,7 @@ public class SetColorAI : MonoBehaviour
     // Start is called before the first frame update
     
     IEnumerator  Start() {
-         block = new MaterialPropertyBlock();
+           block = new MaterialPropertyBlock();
         meshRenderer = GetComponent<MeshRenderer>();
         while(true){
             yield return new WaitForSeconds(0f);

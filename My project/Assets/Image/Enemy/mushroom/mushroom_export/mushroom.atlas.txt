@@ -1,0 +1,17 @@
+mushroom.png
+size:588,392
+filter:Linear,Linear
+pma:true
+back_hat
+bounds:2,2,357,177
+eyes
+bounds:361,31,83,62
+offsets:1,1,85,67
+mouth
+bounds:361,9,19,20
+offsets:2,1,22,22
+mushroom_hat
+bounds:2,181,366,207
+offsets:0,5,366,212
+trunk
+bounds:370,95,216,293

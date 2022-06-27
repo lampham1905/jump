@@ -13,12 +13,13 @@ public class FootAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckPlayerComplete();
     }
     private void OnTriggerEnter2D(Collider2D other) {
        if(other.gameObject.CompareTag("end")){
             if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
-            BgSound.Instance.PlayWind();
+            BgSound.Instance.PlayDie();
+            GameUIManager.instance.ShowDeadPanel();
 
         }
            // PlayerController.instance.NextLevel();
@@ -40,4 +41,8 @@ public class FootAI : MonoBehaviour
     //         SaveData.instance.AddLevelAndSave();
     //     }
     // }
+    public void CheckPlayerComplete(){
+        if(GameManager.instance.isCompelete){
+            Destroy(this.gameObject);
+    }}
 }

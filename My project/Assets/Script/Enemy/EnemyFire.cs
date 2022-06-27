@@ -21,13 +21,17 @@ public class EnemyFire : MonoBehaviour
     public bool isShooting = false;
     public Transform endPoint;
     
+    private Rigidbody2D rb;
+    private Collider2D coll;
+    public GameObject Warning;
      private void Start()
     {
-      
        //StartCoroutine(AnimationCoroutine());
         skeletonAnimation = GetComponent<SkeletonAnimation>();
         spineAnimationState = skeletonAnimation.AnimationState;
         skeleton = skeletonAnimation.Skeleton;
+        rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<Collider2D>();
     }
     private void Update() {
         //  if(GameManager.instance.isShootingEnemy){
@@ -51,9 +55,29 @@ public class EnemyFire : MonoBehaviour
             FolowRoute.ins.JumpToEnd(endPoint);
             GameManager.instance.isJumpingEnemy = true;
             isShooting = false;
+            rb.velocity = new Vector2(0, 2f);
+            //coll.enabled = false;
             spineAnimationState.SetAnimation(0, DieAnimationName, false);
-            spineAnimationState.AddAnimation(0,idleNormalAnimationName, true, 0);
+            //StartCoroutine(Die());
+            Warning.SetActive(false);
+            spineAnimationState.AddAnimation(0, idleNormalAnimationName, true, 0);
+            
            
+        }
+        if(other.gameObject.CompareTag("footAI")){
+            if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+                BgSound.Instance.PlayHit();
+            }
+            PlayerAI.instance.DisableRigibody();
+            PlayerAI.instance.EnableRigigbody();
+            FollowRouteAI.ins.JumpToEndAI(endPoint);
+            GameManager.instance.isJumpingEnemy = true;
+            coll.enabled = false;
+            isShooting = false;
+            rb.velocity = new Vector2(0, 4f);
+            spineAnimationState.SetAnimation(0, DieAnimationName, false);
+            StartCoroutine(Die());
+            Warning.SetActive(false);
         }
         if(other.gameObject.CompareTag("MainCamera")){
             isShooting = true;
@@ -64,17 +88,14 @@ public class EnemyFire : MonoBehaviour
         StartCoroutine(AnimationCoroutine());
     }
     IEnumerator AnimationCoroutine(){
-     
-            while(isShooting) {
             spineAnimationState.SetAnimation(0, AttackAnimationName, false);
             spineAnimationState.AddAnimation(0, idleNormalAnimationName, true, 0);
             yield return new WaitForSeconds(1f);
             Shot();
             yield return new WaitForSeconds(1.5f);
-        }
-      
     }
-    
-
-    
+    IEnumerator Die(){
+        yield return new WaitForSeconds(2f);
+        Destroy(this.gameObject);
+    }
 }

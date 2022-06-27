@@ -1,0 +1,48 @@
+{ "skeleton": { "images": "~/Desktop/frog/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "R_foot", "bone": "root", "attachment": "R_foot" },
+	{ "name": "R_thigh", "bone": "root", "attachment": "R_thigh" },
+	{ "name": "R_calf", "bone": "root", "attachment": "R_calf" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "eyes", "bone": "root", "attachment": "eyes" },
+	{ "name": "eyes_die", "bone": "root", "attachment": "eyes_die" },
+	{ "name": "L_foot", "bone": "root", "attachment": "L_foot" },
+	{ "name": "L_thigh", "bone": "root", "attachment": "L_thigh" },
+	{ "name": "L_calf", "bone": "root", "attachment": "L_calf" }
+],
+"skins": {
+	"default": {
+		"R_foot": {
+			"R_foot": { "x": 98.0000000000001, "y": -327.5, "width": 80, "height": 51 }
+		},
+		"R_thigh": {
+			"R_thigh": { "x": 96.0000000000001, "y": -280.5, "width": 84, "height": 155 }
+		},
+		"R_calf": {
+			"R_calf": { "x": 94.5000000000001, "y": -277, "width": 79, "height": 132 }
+		},
+		"body": {
+			"body": { "x": 215, "y": -192, "width": 266, "height": 250 }
+		},
+		"eyes": {
+			"eyes": { "x": 162, "y": -122, "width": 150, "height": 74 }
+		},
+		"eyes_die": {
+			"eyes_die": { "x": 164.5, "y": -122, "width": 155, "height": 74 }
+		},
+		"L_foot": {
+			"L_foot": { "x": 272.5, "y": -333.5, "width": 89, "height": 57 }
+		},
+		"L_thigh": {
+			"L_thigh": { "x": 270.5, "y": -281, "width": 93, "height": 172 }
+		},
+		"L_calf": {
+			"L_calf": { "x": 269, "y": -276.5, "width": 88, "height": 147 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

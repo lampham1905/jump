@@ -1,0 +1,32 @@
+{ "skeleton": { "images": "D:/Animation/Hoang tu cuu cong chua/Enemy/mushroom/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "back_hat", "bone": "root", "attachment": "back_hat" },
+	{ "name": "trunk", "bone": "root", "attachment": "trunk" },
+	{ "name": "mushroom_hat", "bone": "root", "attachment": "mushroom_hat" },
+	{ "name": "mouth", "bone": "root", "attachment": "mouth" },
+	{ "name": "eyes", "bone": "root", "attachment": "eyes" }
+],
+"skins": {
+	"default": {
+		"back_hat": {
+			"back_hat": { "x": 216.5, "y": -158.5, "width": 357, "height": 177 }
+		},
+		"trunk": {
+			"trunk": { "x": 193, "y": -230.5, "width": 216, "height": 293 }
+		},
+		"mushroom_hat": {
+			"mushroom_hat": { "x": 213, "y": -132, "width": 366, "height": 212 }
+		},
+		"mouth": {
+			"mouth": { "x": 124, "y": -265, "width": 22, "height": 22 }
+		},
+		"eyes": {
+			"eyes": { "x": 139.5, "y": -236.5, "width": 85, "height": 67 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

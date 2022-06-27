@@ -19,9 +19,9 @@ public class FootPlayer : MonoBehaviour
        if(other.gameObject.CompareTag("end")){
             if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
             BgSound.Instance.PlayWind();
-        }
+            }
+            GameManager.instance.isCompelete = true;
             PlayerController.instance.NextLevel();
-          
        }
         if(other.gameObject.CompareTag("nextPlatform")){
             PlayerController.instance.NextPlatform();

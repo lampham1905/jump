@@ -1,0 +1,44 @@
+{ "skeleton": { "images": "~/Desktop/wizard/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "staff", "bone": "root", "attachment": "staff" },
+	{ "name": "R_hand", "bone": "root", "attachment": "R_hand" },
+	{ "name": "R_arm", "bone": "root", "attachment": "R_arm" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "L_hand", "bone": "root", "attachment": "L_hand" },
+	{ "name": "L_arm", "bone": "root", "attachment": "L_arm" },
+	{ "name": "cover", "bone": "root", "attachment": "cover" }
+],
+"skins": {
+	"default": {
+		"head": {
+			"head": { "x": 313, "y": -176.5, "width": 344, "height": 231 }
+		},
+		"staff": {
+			"staff": { "x": 147.5, "y": -334, "width": 229, "height": 248 }
+		},
+		"R_hand": {
+			"R_hand": { "x": 176.5, "y": -377.5, "width": 73, "height": 67 }
+		},
+		"R_arm": {
+			"R_arm": { "x": 222, "y": -337.5, "width": 96, "height": 105 }
+		},
+		"body": {
+			"body": { "x": 341.5, "y": -379.5, "width": 287, "height": 201 }
+		},
+		"L_hand": {
+			"L_hand": { "x": 430.5, "y": -388, "width": 85, "height": 76 }
+		},
+		"L_arm": {
+			"L_arm": { "x": 410, "y": -336.5, "width": 92, "height": 93 }
+		},
+		"cover": {
+			"cover": { "x": 312, "y": -293, "width": 226, "height": 118 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

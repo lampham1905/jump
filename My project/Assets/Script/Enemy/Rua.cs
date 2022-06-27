@@ -105,14 +105,33 @@ public class Rua : MonoBehaviour
             PlayerController.instance.EnableRigigbody();
             FolowRoute.ins.JumpToEnd(endPoint);
             NormalToShell();
-            // GameManager.instance.isJumpingEnemy = true;
+            //GameManager.instance.isJumpingEnemy = true;
             canMove = false;
+            //rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.mass = 10;
+        }
+        else if(other.gameObject.CompareTag("footAI")){
+             if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+                BgSound.Instance.PlayHit();
+            }
+            PlayerAI.instance.DisableRigibody();
+            PlayerAI.instance.EnableRigigbody();
+            FollowRouteAI.ins.JumpToEndAI(endPoint);
+            NormalToShell();
+            //GameManager.instance.isJumpingEnemy = true;
+            canMove = false;
+            //rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.mass = 10;
+
         }
         
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Player")){
             PlayerController.instance.Die();
+        }
+        if(other.gameObject.CompareTag("PlayerAI")){
+            PlayerAI.instance.Die();
         }
     }
     public void  NormalToShell(){

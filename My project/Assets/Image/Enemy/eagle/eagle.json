@@ -1,0 +1,52 @@
+{ "skeleton": { "images": "D:/Animation/Hoang tu cuu cong chua/Enemy/eagle/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "tail", "bone": "root", "attachment": "tail" },
+	{ "name": "in wing copy", "bone": "root", "attachment": "in wing copy" },
+	{ "name": "foot in", "bone": "root", "attachment": "foot in" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "foot on", "bone": "root", "attachment": "foot on" },
+	{ "name": "on wing", "bone": "root", "attachment": "on wing" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "neb-below", "bone": "root", "attachment": "neb-below" },
+	{ "name": "neb_on", "bone": "root", "attachment": "neb_on" },
+	{ "name": "eyes2", "bone": "root", "attachment": "eyes2" }
+],
+"skins": {
+	"default": {
+		"tail": {
+			"tail": { "x": 413.5, "y": -275, "width": 199, "height": 120 }
+		},
+		"in wing copy": {
+			"in wing copy": { "x": 249.5, "y": -164, "width": 293, "height": 252 }
+		},
+		"foot in": {
+			"foot in": { "x": 308.5, "y": -324, "width": 163, "height": 84 }
+		},
+		"body": {
+			"body": { "x": 238.5, "y": -287.5, "width": 237, "height": 117 }
+		},
+		"foot on": {
+			"foot on": { "x": 336.5, "y": -312.5, "width": 159, "height": 91 }
+		},
+		"on wing": {
+			"on wing": { "x": 301.5, "y": -188, "width": 411, "height": 286 }
+		},
+		"head": {
+			"head": { "x": 133, "y": -272, "width": 150, "height": 132 }
+		},
+		"neb-below": {
+			"neb-below": { "x": 67, "y": -284, "width": 34, "height": 46 }
+		},
+		"neb_on": {
+			"neb_on": { "x": 60, "y": -283, "width": 50, "height": 56 }
+		},
+		"eyes2": {
+			"eyes2": { "x": 101.5, "y": -256.5, "width": 41, "height": 31 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

@@ -367,9 +367,10 @@ public class PlayerController : MonoBehaviour
         canJump = false;
     }
     IEnumerator NextSceneCounter(){
+        //Time.timeScale = 0;
         yield return new WaitForSeconds(.2f);
         GameUIManager.instance.ShowVictoryPanel();
-        canJump = false;
+        canJump = false; 
     }
     public void SetIdleAnimationState(){
         spineAnimationState.SetAnimation(0, idleAnimationName, true);

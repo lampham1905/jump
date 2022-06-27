@@ -1,0 +1,120 @@
+{ "skeleton": { "images": "D:/Animation/Hoang tu cuu cong chua/Enemy/crab/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "R_arm", "bone": "root", "attachment": "R_arm" },
+	{ "name": "R_down_eyes", "bone": "root", "attachment": "R_down_eyes" },
+	{ "name": "R_eyes", "bone": "root", "attachment": "R_eyes" },
+	{ "name": "L_long_may", "bone": "root", "attachment": "L_long_may" },
+	{ "name": "Layer 6", "bone": "root", "attachment": "Layer 6" },
+	{ "name": "L_down_eyes", "bone": "root", "attachment": "L_down_eyes" },
+	{ "name": "L_eyes", "bone": "root", "attachment": "L_eyes" },
+	{ "name": "R_long_may", "bone": "root", "attachment": "R_long_may" },
+	{ "name": "Layer 76", "bone": "root", "attachment": "Layer 76" },
+	{ "name": "L_arm", "bone": "root", "attachment": "L_arm" },
+	{ "name": "L_forearm", "bone": "root", "attachment": "L_forearm" },
+	{ "name": "L_arm_dang_sau", "bone": "root", "attachment": "L_arm_dang_sau" },
+	{ "name": "L_arm_dang_trc", "bone": "root", "attachment": "L_arm_dang_trc" },
+	{ "name": "L_legs_3", "bone": "root", "attachment": "L_legs_3" },
+	{ "name": "L_legs_2", "bone": "root", "attachment": "L_legs_2" },
+	{ "name": "R_legs_3", "bone": "root", "attachment": "R_legs_3" },
+	{ "name": "R_legs_2", "bone": "root", "attachment": "R_legs_2" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "R_legs_1", "bone": "root", "attachment": "R_legs_1" },
+	{ "name": "L_legs_1", "bone": "root", "attachment": "L_legs_1" },
+	{ "name": "R_forearm", "bone": "root", "attachment": "R_forearm" },
+	{ "name": "R_hand_dang_sau", "bone": "root", "attachment": "R_hand_dang_sau" },
+	{ "name": "body_star_fish", "bone": "root", "attachment": "body_star_fish" },
+	{ "name": "face", "bone": "root", "attachment": "face" },
+	{ "name": "face1", "bone": "root", "attachment": "face1" },
+	{ "name": "face2", "bone": "root", "attachment": "face2" },
+	{ "name": "R_hand_dang_trc", "bone": "root", "attachment": "R_hand_dang_trc" }
+],
+"skins": {
+	"default": {
+		"R_arm": {
+			"R_arm": { "x": 169, "y": -678.5, "width": 84, "height": 41 }
+		},
+		"R_down_eyes": {
+			"R_down_eyes": { "x": 264.5, "y": -617, "width": 31, "height": 38 }
+		},
+		"R_eyes": {
+			"R_eyes": { "x": 249.5, "y": -568.5, "width": 79, "height": 87 }
+		},
+		"L_long_may": {
+			"L_long_may": { "x": 248.5, "y": -555.5, "width": 73, "height": 51 }
+		},
+		"Layer 6": {
+			"Layer 6": { "x": 251.5, "y": -575, "width": 11, "height": 14 }
+		},
+		"L_down_eyes": {
+			"L_down_eyes": { "x": 349, "y": -617.5, "width": 32, "height": 39 }
+		},
+		"L_eyes": {
+			"L_eyes": { "x": 364.5, "y": -579.5, "width": 79, "height": 113 }
+		},
+		"R_long_may": {
+			"R_long_may": { "x": 366, "y": -554, "width": 72, "height": 52 }
+		},
+		"Layer 76": {
+			"Layer 76": { "x": 363, "y": -574.5, "width": 10, "height": 13 }
+		},
+		"L_arm": {
+			"L_arm": { "x": 447, "y": -680.5, "width": 78, "height": 75 }
+		},
+		"L_forearm": {
+			"L_forearm": { "x": 474, "y": -636.5, "width": 38, "height": 63 }
+		},
+		"L_arm_dang_sau": {
+			"L_arm_dang_sau": { "x": 456.5, "y": -573.5, "width": 67, "height": 97 }
+		},
+		"L_arm_dang_trc": {
+			"L_arm_dang_trc": { "x": 496, "y": -566, "width": 84, "height": 120 }
+		},
+		"L_legs_3": {
+			"L_legs_3": { "x": 477.5, "y": -754.5, "width": 95, "height": 97 }
+		},
+		"L_legs_2": {
+			"L_legs_2": { "x": 466, "y": -774.5, "width": 82, "height": 111 }
+		},
+		"R_legs_3": {
+			"R_legs_3": { "x": 147.5, "y": -759.5, "width": 87, "height": 105 }
+		},
+		"R_legs_2": {
+			"R_legs_2": { "x": 160.5, "y": -778, "width": 75, "height": 116 }
+		},
+		"body": {
+			"body": { "x": 312.5, "y": -723, "width": 305, "height": 210 }
+		},
+		"R_legs_1": {
+			"R_legs_1": { "x": 186.5, "y": -799, "width": 69, "height": 120 }
+		},
+		"L_legs_1": {
+			"L_legs_1": { "x": 441, "y": -799.5, "width": 74, "height": 117 }
+		},
+		"R_forearm": {
+			"R_forearm": { "x": 111.5, "y": -638, "width": 71, "height": 108 }
+		},
+		"R_hand_dang_sau": {
+			"R_hand_dang_sau": { "x": 131, "y": -544.5, "width": 108, "height": 137 }
+		},
+		"body_star_fish": {
+			"body_star_fish": { "x": 212.5, "y": -425, "width": 245, "height": 248 }
+		},
+		"face": {
+			"face": { "x": 207, "y": -408.5, "width": 112, "height": 119 }
+		},
+		"face1": {
+			"face1": { "x": 210, "y": -400.5, "width": 88, "height": 73 }
+		},
+		"face2": {
+			"face2": { "x": 205, "y": -398.5, "width": 122, "height": 123 }
+		},
+		"R_hand_dang_trc": {
+			"R_hand_dang_trc": { "x": 95, "y": -534, "width": 140, "height": 182 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

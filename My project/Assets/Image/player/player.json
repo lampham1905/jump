@@ -1,0 +1,120 @@
+{ "skeleton": { "images": "D:/Animation/Hoang tu cuu cong chua/Player/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Back_pag", "bone": "root", "attachment": "Back_pag" },
+	{ "name": "R_legs", "bone": "root", "attachment": "R_legs" },
+	{ "name": "R_foot", "bone": "root", "attachment": "R_foot" },
+	{ "name": "R_forarm", "bone": "root", "attachment": "R_forarm" },
+	{ "name": "R_pack_pag_2", "bone": "root", "attachment": "R_pack_pag_2" },
+	{ "name": "back_body_2", "bone": "root", "attachment": "back_body_2" },
+	{ "name": "R_thigh", "bone": "root", "attachment": "R_thigh" },
+	{ "name": "L_legs", "bone": "root", "attachment": "L_legs" },
+	{ "name": "L_foot", "bone": "root", "attachment": "L_foot" },
+	{ "name": "L_thigh", "bone": "root", "attachment": "L_thigh" },
+	{ "name": "back_hat", "bone": "root", "attachment": "back_hat" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "jacket", "bone": "root", "attachment": "jacket" },
+	{ "name": "R_hand", "bone": "root", "attachment": "R_hand" },
+	{ "name": "L_arm", "bone": "root", "attachment": "L_arm" },
+	{ "name": "L_forarm", "bone": "root", "attachment": "L_forarm" },
+	{ "name": "L_thumb", "bone": "root", "attachment": "L_thumb" },
+	{ "name": "L_pack_bag_1", "bone": "root", "attachment": "L_pack_bag_1" },
+	{ "name": "L_hand", "bone": "root", "attachment": "L_hand" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "hat", "bone": "root", "attachment": "hat" },
+	{ "name": "eyes", "bone": "root", "attachment": "eyes" },
+	{ "name": "mouth", "bone": "root", "attachment": "mouth" },
+	{ "name": "nose", "bone": "root", "attachment": "nose" },
+	{ "name": "glass", "bone": "root", "attachment": "glass" },
+	{ "name": "eyes_2", "bone": "root", "attachment": "eyes_2" },
+	{ "name": "mouth_2", "bone": "root", "attachment": "mouth_2" }
+],
+"skins": {
+	"default": {
+		"Back_pag": {
+			"Back_pag": { "x": 166.5, "y": -400, "width": 209, "height": 206 }
+		},
+		"R_legs": {
+			"R_legs": { "x": 271, "y": -513.5, "width": 42, "height": 83 }
+		},
+		"R_foot": {
+			"R_foot": { "x": 280, "y": -546.5, "width": 86, "height": 69 }
+		},
+		"R_forarm": {
+			"R_forarm": { "x": 282.5, "y": -362, "width": 45, "height": 58 }
+		},
+		"R_pack_pag_2": {
+			"R_pack_pag_2": { "x": 279.5, "y": -371, "width": 47, "height": 98 }
+		},
+		"back_body_2": {
+			"back_body_2": { "x": 253.5, "y": -390, "width": 85, "height": 144 }
+		},
+		"R_thigh": {
+			"R_thigh": { "x": 254.5, "y": -451.5, "width": 79, "height": 103 }
+		},
+		"L_legs": {
+			"L_legs": { "x": 200, "y": -534.5, "width": 48, "height": 83 }
+		},
+		"L_foot": {
+			"L_foot": { "x": 211.5, "y": -561.5, "width": 93, "height": 75 }
+		},
+		"L_thigh": {
+			"L_thigh": { "x": 200.5, "y": -463, "width": 83, "height": 110 }
+		},
+		"back_hat": {
+			"back_hat": { "x": 295.5, "y": -296, "width": 79, "height": 92 }
+		},
+		"body": {
+			"body": { "x": 204.5, "y": -361, "width": 127, "height": 136 }
+		},
+		"jacket": {
+			"jacket": { "x": 177.5, "y": -393.5, "width": 79, "height": 173 }
+		},
+		"R_hand": {
+			"R_hand": { "x": 283.5, "y": -362.5, "width": 57, "height": 55 }
+		},
+		"L_arm": {
+			"L_arm": { "x": 139, "y": -361, "width": 68, "height": 90 }
+		},
+		"L_forarm": {
+			"L_forarm": { "x": 147.5, "y": -400, "width": 83, "height": 58 }
+		},
+		"L_thumb": {
+			"L_thumb": { "x": 191, "y": -363, "width": 38, "height": 28 }
+		},
+		"L_pack_bag_1": {
+			"L_pack_bag_1": { "x": 153.5, "y": -387, "width": 87, "height": 156 }
+		},
+		"L_hand": {
+			"L_hand": { "x": 182.5, "y": -386, "width": 55, "height": 64 }
+		},
+		"head": {
+			"head": { "x": 195.5, "y": -194, "width": 313, "height": 298 }
+		},
+		"hat": {
+			"hat": { "x": 189, "y": -205, "width": 342, "height": 364 }
+		},
+		"eyes": {
+			"eyes": { "x": 294, "y": -221, "width": 130, "height": 76 }
+		},
+		"mouth": {
+			"mouth": { "x": 311.5, "y": -266.5, "width": 39, "height": 33 }
+		},
+		"nose": {
+			"nose": { "x": 315, "y": -229.5, "width": 24, "height": 25 }
+		},
+		"glass": {
+			"glass": { "x": 198.5, "y": -203, "width": 333, "height": 168 }
+		},
+		"eyes_2": {
+			"eyes_2": { "x": 283.5, "y": -223.5, "width": 115, "height": 87 }
+		},
+		"mouth_2": {
+			"mouth_2": { "x": 309, "y": -273.5, "width": 64, "height": 43 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

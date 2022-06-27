@@ -1,0 +1,24 @@
+{ "skeleton": { "images": "D:/Animation/Hoang tu cuu cong chua/Enemy/carnivorous_flower/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "tongue", "bone": "root", "attachment": "tongue" },
+	{ "name": "trunk", "bone": "root", "attachment": "trunk" },
+	{ "name": "Group 6", "bone": "root", "attachment": "Group 6" }
+],
+"skins": {
+	"default": {
+		"tongue": {
+			"tongue": { "x": 182, "y": -257.5, "width": 40, "height": 433 }
+		},
+		"trunk": {
+			"trunk": { "x": 188.5, "y": -651.5, "width": 227, "height": 277 }
+		},
+		"Group 6": {
+			"Group 6": { "x": 182.5, "y": -449, "width": 269, "height": 234 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

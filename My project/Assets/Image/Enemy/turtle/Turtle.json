@@ -1,0 +1,72 @@
+{ "skeleton": { "images": "D:/Animation/New folder/Enemy/turtle/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "tail", "bone": "root", "attachment": "tail" },
+	{ "name": "R_arm", "bone": "root", "attachment": "R_arm" },
+	{ "name": "R_legs", "bone": "root", "attachment": "R_legs" },
+	{ "name": "R_thigh", "bone": "root", "attachment": "R_thigh" },
+	{ "name": "body_bottom", "bone": "root", "attachment": "body_bottom" },
+	{ "name": "L_legs", "bone": "root", "attachment": "L_legs" },
+	{ "name": "L_thigh", "bone": "root", "attachment": "L_thigh" },
+	{ "name": "L_arm", "bone": "root", "attachment": "L_arm" },
+	{ "name": "neck", "bone": "root", "attachment": "neck" },
+	{ "name": "eyes_3", "bone": "root", "attachment": "eyes_3" },
+	{ "name": "body_top", "bone": "root", "attachment": "body_top" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "eyes_1", "bone": "root", "attachment": "eyes_1" },
+	{ "name": "mouth", "bone": "root", "attachment": "mouth" },
+	{ "name": "eyes_2", "bone": "root", "attachment": "eyes_2" }
+],
+"skins": {
+	"default": {
+		"tail": {
+			"tail": { "x": 409, "y": -404, "width": 74, "height": 42 }
+		},
+		"R_arm": {
+			"R_arm": { "x": 166, "y": -433, "width": 84, "height": 134 }
+		},
+		"R_legs": {
+			"R_legs": { "x": 324, "y": -452.5, "width": 72, "height": 89 }
+		},
+		"R_thigh": {
+			"R_thigh": { "x": 301.5, "y": -432.5, "width": 81, "height": 125 }
+		},
+		"body_bottom": {
+			"body_bottom": { "x": 275, "y": -381.5, "width": 282, "height": 209 }
+		},
+		"L_legs": {
+			"L_legs": { "x": 394, "y": -455.5, "width": 72, "height": 89 }
+		},
+		"L_thigh": {
+			"L_thigh": { "x": 380.5, "y": -436.5, "width": 81, "height": 125 }
+		},
+		"L_arm": {
+			"L_arm": { "x": 248, "y": -461.5, "width": 92, "height": 151 }
+		},
+		"neck": {
+			"neck": { "x": 177, "y": -359.5, "width": 118, "height": 101 }
+		},
+		"eyes_3": {
+			"eyes_3": { "x": 176.5, "y": -371.5, "width": 31, "height": 31 }
+		},
+		"body_top": {
+			"body_top": { "x": 276, "y": -323, "width": 306, "height": 230 }
+		},
+		"head": {
+			"head": { "x": 119, "y": -321.5, "width": 170, "height": 183 }
+		},
+		"eyes_1": {
+			"eyes_1": { "x": 69.5, "y": -333, "width": 87, "height": 48 }
+		},
+		"mouth": {
+			"mouth": { "x": 78, "y": -366.5, "width": 68, "height": 25 }
+		},
+		"eyes_2": {
+			"eyes_2": { "x": 74, "y": -338, "width": 66, "height": 22 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
