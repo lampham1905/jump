@@ -15,6 +15,7 @@ public class HoaAnThit : MonoBehaviour
     public Spine.AnimationState spineAnimationState;
     public Spine.Skeleton skeleton;
     public bool attack = true;
+    public bool isAttack = true;
     public GameObject LuoiHoa;
     private void Start() {
         skeletonAnimation = GetComponent<SkeletonAnimation>();
@@ -32,9 +33,9 @@ public class HoaAnThit : MonoBehaviour
         spineAnimationState.SetAnimation(0, idleAnimationName, true );
         yield return new WaitForSeconds(1f);
         spineAnimationState.SetAnimation(0, attackAnimationName, false);
-        yield return new WaitForSeconds(.6f);
+        yield return new WaitForSeconds(.8f);
         LuoiHoa.SetActive(true);
-        yield return new WaitForSeconds(.6f);
+        yield return new WaitForSeconds(.4f);
         LuoiHoa.SetActive(false);
         attack = true;
     }

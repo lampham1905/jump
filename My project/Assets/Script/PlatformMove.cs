@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformMove : MonoBehaviour
 {
     public float speed;
-    private Rigidbody2D rb;
+    //private Rigidbody2D rb;
     // Start is called before the first frame update
     private bool isMoveUp = true;
     private bool isMoveLeft = true;
@@ -17,7 +17,7 @@ public class PlatformMove : MonoBehaviour
     public bool IsMoveLeftRight = false;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
        
 
     }
@@ -35,7 +35,7 @@ public class PlatformMove : MonoBehaviour
     private  void MoveUpDown(){
         if(isMoveUp){
             if(transform.position.y > bottomPoint){
-                    rb.velocity = new Vector2 (0, -speed);
+                    transform.Translate(Vector3.down * speed * Time.deltaTime);
             }
             else{
                 isMoveUp = false;
@@ -43,7 +43,8 @@ public class PlatformMove : MonoBehaviour
         }
         else{
             if(transform.position.y < topPoint){
-                  rb.velocity = new Vector2(0, speed);  
+                    transform.Translate(Vector3.up * speed * Time.deltaTime);
+                  
             }
             else{
                 isMoveUp = true;
@@ -53,7 +54,8 @@ public class PlatformMove : MonoBehaviour
     private void MoveLeftRight(){
         if(isMoveLeft){
             if(transform.position.x > leftPoint){
-                rb.velocity = new Vector2(-speed, 0);
+                //rb.velocity = new Vector2(-speed, 0);
+                transform.Translate(Vector3.left * speed * Time.deltaTime);
             }
             else{
                 isMoveLeft = false;
@@ -61,7 +63,8 @@ public class PlatformMove : MonoBehaviour
         }
         else{
             if(transform.position.x < rightPoint){
-                rb.velocity = new Vector2(speed, 0);
+                //rb.velocity = new Vector2(speed, 0);
+                transform.Translate(Vector3.right * speed * Time.deltaTime);
             }
             else{
                 isMoveLeft = true;
