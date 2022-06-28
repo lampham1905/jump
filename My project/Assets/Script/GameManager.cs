@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
@@ -84,6 +85,18 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         Instantiate(AI, spawnAI.position, Quaternion.identity);
     }
+
     
-    
+}
+
+[CustomEditor(typeof(SetMap))]
+public class GamemanagerEditor : Editor {
+    public override void OnInspectorGUI() {
+        base.OnInspectorGUI();
+        if(GUILayout.Button("SELECT")){
+            SetMap t = (target as SetMap);
+            t.Set();
+        }
+        
+    }
 }

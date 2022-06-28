@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CamController : MonoBehaviour
 {
+     
     public static CamController instance;
     private Camera cam;
      private void Awake()

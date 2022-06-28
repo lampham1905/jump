@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3803250360703900809}
   - component: {fileID: 3803250360703900808}
   - component: {fileID: 3803250360703900804}
-  - component: {fileID: 3803250360703900806}
   - component: {fileID: 3803250360703900805}
+  - component: {fileID: 7828595498380961240}
   m_Layer: 0
   m_Name: "N\u1EA5m"
   m_TagString: Untagged
@@ -149,7 +149,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1066055, y: 2.4224675}
   m_EdgeRadius: 0
---- !u!50 &3803250360703900806
+--- !u!114 &3803250360703900805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803250360703900815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee8fb379e8c5fc4095911b3c1a8a59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left: 0
+  right: 0
+  jumpLength: 1.5
+  idleAnimationName: idle
+  dieAnimationName: die
+  jumpAnimationName: jump
+  goLeft: 1
+  goRight: 1
+  isMove: 0
+  endPoint: {fileID: 0}
+--- !u!50 &7828595498380961240
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -169,24 +191,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &3803250360703900805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3803250360703900815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bee8fb379e8c5fc4095911b3c1a8a59d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  left: 0.288
-  right: 1.531
-  jumpLength: 1.5
-  idleAnimationName: idle
-  dieAnimationName: die
-  jumpAnimationName: jump
-  goLeft: 1
-  goRight: 1
+  m_Constraints: 0

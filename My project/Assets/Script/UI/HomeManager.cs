@@ -16,7 +16,7 @@ public class HomeManager : MonoBehaviour
         }
         int LevelCur = PlayerPrefs.GetInt("levelCur", 1);
         //SceneManager.LoadScene("level" + LevelCur);
-        SceneManager.LoadScene("level16");
+        SceneManager.LoadScene("level17");
         PlayerPrefs.SetInt("Mode", 0);
         PlayerPrefs.Save();
     }

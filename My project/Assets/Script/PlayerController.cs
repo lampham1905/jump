@@ -273,7 +273,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag  == "Ground"){
-            if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            if(PlayerPrefs.GetInt("isSoundOn", 1) == 1 && m_didJump){
                 BgSound.Instance.PlayJumpDown();
             }
             if(m_didJump){

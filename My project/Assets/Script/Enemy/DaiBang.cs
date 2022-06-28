@@ -27,9 +27,9 @@ public class DaiBang : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
     private void Update() {
-        //
-            Move();
-       // }
+       if(canMove){
+         Move();
+       }
     }
      private void Move(){
         if(facingLeft){

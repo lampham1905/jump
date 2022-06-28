@@ -2064,7 +2064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6196968004486900234, guid: 83b7b66b454b7164087dea4472bdce9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.99
+      value: -3.94
       objectReference: {fileID: 0}
     - target: {fileID: 6196968004486900234, guid: 83b7b66b454b7164087dea4472bdce9b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3136,16 +3136,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1488142372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59524c365e352e64caf9ecb6dba20dc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 8983f73a5f850a74fb4a3941ddc4c980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.4
-  bottomPoint: -3.2
-  topPoint: -2.4
+  speed: 0.5
+  bottomPoint: -3.94
+  topPoint: -3.07
   leftPoint: 0
   rightPoint: 0
   IsMoveUpDown: 1
   IsMoveLeftRight: 0
+  canMove: 1
 --- !u!4 &1488142375 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6196968004486900234, guid: 83b7b66b454b7164087dea4472bdce9b, type: 3}
@@ -4053,6 +4054,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1523618654}
     m_Modifications:
+    - target: {fileID: 7994575430509247005, guid: d3210fc0340a043499604ced7dec77f2, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8359303143756421576, guid: d3210fc0340a043499604ced7dec77f2, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4075,7 +4080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8359303143756421581, guid: d3210fc0340a043499604ced7dec77f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.42278036
+      value: 1.36
       objectReference: {fileID: 0}
     - target: {fileID: 8359303143756421581, guid: d3210fc0340a043499604ced7dec77f2, type: 3}
       propertyPath: m_LocalPosition.z

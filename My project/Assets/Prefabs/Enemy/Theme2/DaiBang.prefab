@@ -212,4 +212,4 @@ MonoBehaviour:
   idelAnimationName: fly
   left: 0
   right: 0
-  speed: 5
+  speed: 1
