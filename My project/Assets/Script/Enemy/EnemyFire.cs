@@ -88,14 +88,24 @@ public class EnemyFire : MonoBehaviour
         StartCoroutine(AnimationCoroutine());
     }
     IEnumerator AnimationCoroutine(){
-            spineAnimationState.SetAnimation(0, AttackAnimationName, false);
+            while(isShooting){
+                spineAnimationState.SetAnimation(0, AttackAnimationName, false);
             spineAnimationState.AddAnimation(0, idleNormalAnimationName, true, 0);
             yield return new WaitForSeconds(1f);
             Shot();
             yield return new WaitForSeconds(1.5f);
+            }
     }
     IEnumerator Die(){
         yield return new WaitForSeconds(2f);
         Destroy(this.gameObject);
+    }
+     private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Player")){
+            PlayerController.instance.Die();
+        }
+        if(other.gameObject.CompareTag("PlayerAI")){
+            PlayerAI.instance.Die();
+        }
     }
 }

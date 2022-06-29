@@ -1,7 +1,0 @@
-ufo_ship.png
-size:508,284
-filter:Linear,Linear
-pma:true
-UFO
-bounds:2,2,501,279
-offsets:1,1,503,281

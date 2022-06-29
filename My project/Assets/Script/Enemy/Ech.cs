@@ -18,10 +18,13 @@ public class Ech : MonoBehaviour
     [Header("Animation")]
     [SpineAnimation] public string jumpAnimationName;
     [SpineAnimation] public string idelAnimationName;
+    [SpineAnimation] public string dieAnimationName;
     #endregion
     private bool facingLeft = true;
     public bool goLeft = true;
     public bool goRight = true;
+    public bool canMove = false;
+    public Transform endPoint;
     // public bool Left;
     // public bool Right;
     private Collider2D coll;
@@ -40,7 +43,9 @@ public class Ech : MonoBehaviour
         skeleton = skeletonAnimation.Skeleton;
     }
     private void Update() {
-        Move();
+        if(canMove){
+            Move();
+        }
     }
     private void Move(){
         if(facingLeft){
@@ -98,5 +103,29 @@ public class Ech : MonoBehaviour
             
     }
    
-    
+     private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.CompareTag("foot")){
+            if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+                BgSound.Instance.PlayHit();
+            }
+            PlayerController.instance.DisableRigibody();
+            PlayerController.instance.EnableRigigbody();
+            FolowRoute.ins.JumpToEnd(endPoint);
+            canMove = false;
+            DieToNormal();
+            rb.mass = 10;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Player")){
+            PlayerController.instance.Die();
+        }
+        if(other.gameObject.CompareTag("PlayerAI")){
+            PlayerAI.instance.Die();
+        }
+    }
+    public void DieToNormal(){
+        spineAnimationState.SetAnimation(1,dieAnimationName, false);
+        spineAnimationState.AddAnimation(1,idelAnimationName, true, 0);
+    }
 }

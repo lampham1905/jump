@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1193894959}
   m_Layer: 0
   m_Name: DieArea
-  m_TagString: Untagged
+  m_TagString: Die
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5487957, y: 2.1690445}
+  m_Offset: {x: 0.5487957, y: 2.455691}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 35.861515, y: 1.888525}
+  m_Size: {x: 35.861515, y: 2.4618182}
   m_EdgeRadius: 0
 --- !u!1 &716648096007278889
 GameObject:
