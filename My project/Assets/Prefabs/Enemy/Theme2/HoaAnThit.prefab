@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6861306474409704509}
   m_Layer: 0
   m_Name: HoaAnThit
-  m_TagString: Untagged
+  m_TagString: Die
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bdee465b2fccd394c8433056dd073619, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   idleAnimationName: idle
   attackAnimationName: attack
   attack: 1
+  isAttack: 1
   LuoiHoa: {fileID: 6861306474845211168}
 --- !u!1 &6861306474845211168
 GameObject:

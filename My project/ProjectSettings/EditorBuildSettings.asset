@@ -116,6 +116,36 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level35.unity
     guid: 3406ac4970f07df44bcfc5259dab216c
+  - enabled: 1
+    path: Assets/Scenes/Level36.unity
+    guid: 3375638e30b804c44bde5725dba4e358
+  - enabled: 1
+    path: Assets/Scenes/Level37.unity
+    guid: 975e120d7a991c0489dd7b59ccbfbd4f
+  - enabled: 1
+    path: Assets/Scenes/Level38.unity
+    guid: 64144c5e8f292874fb2a533c04c2dbf9
+  - enabled: 1
+    path: Assets/Scenes/Level39.unity
+    guid: 39b61fa762e126b4fa07d841ca3abae1
+  - enabled: 1
+    path: Assets/Scenes/Level40.unity
+    guid: 7800b5c4f7f328c4aac266cfa5ecb5ff
+  - enabled: 1
+    path: Assets/Scenes/Level41.unity
+    guid: 93db950395f26f140a16381bc7e24563
+  - enabled: 1
+    path: Assets/Scenes/Level42.unity
+    guid: 95e489e0635d9c04ebae270ac5022c90
+  - enabled: 1
+    path: Assets/Scenes/Level43.unity
+    guid: 5e2c68670e3a62148a2e4c4b98761eab
+  - enabled: 1
+    path: Assets/Scenes/Level44.unity
+    guid: f7e8c11bae520254cb488127016dc726
+  - enabled: 1
+    path: Assets/Scenes/Level45.unity
+    guid: dcf5e8af0a881974383be18d096c6831
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

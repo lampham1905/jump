@@ -18,7 +18,7 @@ public class GameUIManager : MonoBehaviour
     public GameObject musicOff;
     public static GameUIManager instance;
      bool isShowSettingPanel = false;
-     public TextMeshProUGUI LevelText;
+     //public TextMeshProUGUI LevelText;
     private void Awake() {
         instance = this;
     }
@@ -28,7 +28,7 @@ public class GameUIManager : MonoBehaviour
     {
         
         GamePlayPanel.SetActive(true);
-        LevelText.text = "LEVEL " + (SceneManager.GetActiveScene().buildIndex).ToString();
+        //LevelText.text = "LEVEL " + (SceneManager.GetActiveScene().buildIndex).ToString();
         CheckMusicStart();
         CheckSoundStart();
 

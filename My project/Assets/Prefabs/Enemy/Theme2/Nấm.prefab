@@ -55,7 +55,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09a49c82d80466446bf04786d54a4eae, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -136,7 +136,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.058125496, y: 1.176485}
+  m_Offset: {x: 0.14291549, y: 1.176485}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -147,7 +147,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1066055, y: 2.4224675}
+  m_Size: {x: 3.4324126, y: 2.4224675}
   m_EdgeRadius: 0
 --- !u!114 &3803250360703900805
 MonoBehaviour:
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: 0
   right: 0
-  jumpLength: 1.5
+  jumpLength: 1
   idleAnimationName: idle
   dieAnimationName: die
   jumpAnimationName: jump

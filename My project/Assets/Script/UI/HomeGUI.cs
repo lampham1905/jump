@@ -11,34 +11,56 @@ public class HomeGUI : MonoBehaviour
     public GameObject Theme1;
     public GameObject Theme2;
     public GameObject Theme3;
+    public GameObject Theme4;
 
     private void Awake() {
        instance = this;
        int levelCur = PlayerPrefs.GetInt("LeveCur");
-        if( levelCur >= 1 && levelCur <= 15) {
-            Theme1.SetActive(true);
-            Theme2.SetActive(false);
-            Theme3.SetActive(false);  
-        }
-        else if(levelCur > 15 && levelCur <= 30){
-            Theme1.SetActive(false);
-            Theme2.SetActive(true);
-            Theme3.SetActive(true);  
-        }
+       
     }
     // Start is called before the first frame update
     public GameObject HomePanel;
     public GameObject SettingPanel;
     public GameObject ModePanel;
     public GameObject LevelPanel;
-
+    int levelCur;
    
     void Start()
     {
         CheckMusicStart();
         CheckSoundStart();
+        PlayerPrefs.DeleteAll();
         //PlayerPrefs.DeleteAll();
-        //PlayerPrefs.DeleteAll();
+        // PlayerPrefs.SetInt("levelCur", 28);
+        // PlayerPrefs.Save();
+
+        if(PlayerPrefs.GetInt("levelCur") == 0){
+            levelCur = 1;
+        }
+        else
+        {levelCur = PlayerPrefs.GetInt("levelCur");}   
+        Debug.Log(levelCur);
+         if( levelCur >= 1 && levelCur <= 15) {
+            Theme1.SetActive(true);
+            Theme2.SetActive(false);
+            Theme3.SetActive(false);  
+        }
+        else if(levelCur > 15 && levelCur <= 25){
+            Theme1.SetActive(false);
+            Theme2.SetActive(true);
+            Theme3.SetActive(false);  
+        }
+         else if(levelCur > 25 && levelCur <= 35){
+            Theme1.SetActive(false);
+            Theme2.SetActive(false);
+            Theme3.SetActive(true);  
+        }
+         else if(levelCur > 35 && levelCur <= 45){
+            Theme1.SetActive(false);
+            Theme2.SetActive(false);
+            Theme3.SetActive(false);
+            Theme4.SetActive(true);  
+        }
     }
 
     // Update is called once per frame

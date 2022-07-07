@@ -65,7 +65,11 @@ public class PlayerController : MonoBehaviour
     public Spine.Skeleton skeleton;
     public GameObject foot;
     bool isMouseDown = false;
-
+    private bool isDie = false;
+    public LayerMask Ground;
+    private bool StartJump = true;
+    public bool isTouchGround = false;
+    public bool isCanJump = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -85,6 +89,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if(rb.velocity.y < 0){
+        //     isCanJump = false;
+        // }
+        
         if (EventSystem.current == null || EventSystem.current.IsPointerOverGameObject(0))    // is the touch on the GUI
             {
                 // GUI Action
@@ -94,15 +102,20 @@ public class PlayerController : MonoBehaviour
     else{
          SetPower();
     if(Input.GetMouseButtonDown(0) ){
-            SetPower(true);
+           if(!isDie && m_didJump == false && isCanJump ){
+             SetPower(true);
             spineAnimationState.SetAnimation(0, holdAnimationName, false);
             isMouseDown = true;
+            isCanJump = false;
+            //StartCoroutine(StartJumpCoroutine());
+           }
         }
     if(Input.GetMouseButtonUp(0) && isMouseDown){
             if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
                 BgSound.Instance.PlayJumpUp();
             }
             SetPower(false);
+            
             lr.positionCount = 0;
             spineAnimationState.SetAnimation(0, jumpStartAnimationName, false);
             spineAnimationState.AddAnimation(0, jumpUpAnimationName, false, 0);
@@ -110,6 +123,10 @@ public class PlayerController : MonoBehaviour
         }
     }
      
+    IEnumerator StartJumpCoroutine(){
+        yield return new WaitForSeconds(1f);
+        StartJump  = true;
+    }
            
      
 
@@ -121,6 +138,15 @@ public class PlayerController : MonoBehaviour
    
 
 
+    }
+    private void CheckTouchGround(){
+        if(coll.IsTouchingLayers(Ground) && rb.velocity.y == 0){
+            isTouchGround = true;
+        }
+    }
+    IEnumerator CheckTouchGroundCoroutine(){
+        yield return new WaitForSeconds(.1f);
+        isTouchGround = false;
     }
     void fixedUpdate(){
 
@@ -134,14 +160,18 @@ public class PlayerController : MonoBehaviour
             maxForceY = 13f;
         }
         else{
-            minForceX = .7f;
+            // minForceX = .7f;
+            // maxForceX = 2.7f;
+            // minForceY = 1f;
+            // maxForceY = 11f;
+             minForceX = 1f;
             maxForceX = 2.7f;
-            minForceY = 1f;
+            minForceY = 2f;
             maxForceY = 11f;
 
         }
         forceX = jumpForce.x;
-        if (m_powerSetted && !m_didJump)
+        if (m_powerSetted && !m_didJump && !isDie)
         {
             //m_powerJumpX = jumpForce.x;
             if(jumpForce.x == maxForceX) maxPower = true;
@@ -168,14 +198,9 @@ public class PlayerController : MonoBehaviour
                 jumpForce.x = Mathf.Clamp(jumpForce.x, minForceX, maxForceX);
                 jumpForce.y = Mathf.Clamp(jumpForce.y, minForceY, maxForceY);
             }
-
-
-
-
-
             // tranjectory line
-            Vector2 StartTranjectory = new Vector2(transform.position.x, transform.position.y + .5f);
-            Vector2[] tranjectory = Plot(rb, StartTranjectory, jumpForce, 500);
+            Vector2 StartTranjectory = new Vector2(transform.position.x - .1f, transform.position.y + .5f);
+            Vector2[] tranjectory = Plot(rb, StartTranjectory, jumpForce, 800);
             lr.positionCount = tranjectory.Length;
             Vector3[] positions = new Vector3[tranjectory.Length];
             for(int i = 0; i < tranjectory.Length; i++)
@@ -220,18 +245,25 @@ public class PlayerController : MonoBehaviour
     {
         if (!rb || jumpForce.x <= 0 || jumpForce.y <= 0) return;
 
-        rb.velocity = jumpForce;
+        if(!isDie){
+            rb.velocity = jumpForce;
+        }
 
-        m_didJump = true;
-
+        //m_didJump = true;
+       StartCoroutine(JumpStartCoroutine());
+        //m_didJump = true;
         // if (m_anim)
         // {
         //     anim.SetBool("didJump", true);
         // }
     }
+    IEnumerator JumpStartCoroutine(){
+        yield return new WaitForSeconds(.1f);
+        m_didJump = true;
+    }
     // check animation when jump
     private void checkAnimationJump(){
-        if(m_didJump){
+        if(m_didJump && !isDie){
             if(rb.velocity.y < 0){
                 spineAnimationState.SetAnimation(0, jumpDownAnimationName, false);
                 m_didJumpDown = true;
@@ -270,9 +302,44 @@ public class PlayerController : MonoBehaviour
         //         GameManager.instance.isShootingEnemyStop = false;
         // }}
     }
+    IEnumerator JumpDownCoroutine(){
+        yield return new WaitForSeconds(5f);
+         m_didJump = false;
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag  == "Ground"){
+        if(other.gameObject.tag  == "GroundHalf"){
+            jumpFull = false;
+            //StartCoroutine(JumpDownCoroutine());
+            GameUIManager.instance.ShowLeftWind();
+            if(PlayerPrefs.GetInt("isSoundOn", 1) == 1 && m_didJump){
+                BgSound.Instance.PlayJumpDown();
+            }
+            if(m_didJump){
+                m_didJump = false;
+                if(rb){
+                rb.velocity = Vector2.zero;
+                }
+                jumpForce = Vector2.zero;
+                currPowerBarVal = 0;
+                //StartCoroutine(JumpDownCoroutine());
+            }
+        }
+        if(other.gameObject.tag  == "GroundFull"){
+            jumpFull = true;
+            GameUIManager.instance.ShowRightWind();
+            if(PlayerPrefs.GetInt("isSoundOn", 1) == 1 && m_didJump){
+                BgSound.Instance.PlayJumpDown();
+            }
+            if(m_didJump){
+                m_didJump = false;
+                if(rb){
+                rb.velocity = Vector2.zero;
+                }
+                jumpForce = Vector2.zero;
+                currPowerBarVal = 0;
+            }
+        } if(other.gameObject.tag  == "Ground"){
             if(PlayerPrefs.GetInt("isSoundOn", 1) == 1 && m_didJump){
                 BgSound.Instance.PlayJumpDown();
             }
@@ -290,6 +357,15 @@ public class PlayerController : MonoBehaviour
             Die();
             //StartCoroutine(DieCouroutine());
         }
+        //  if(other.gameObject.CompareTag("jumpHalf")){
+        //     jumpFull = false;
+        //     GameUIManager.instance.ShowLeftWind();
+        // }
+        // if(other.gameObject.CompareTag("jumpFull")){
+        //     jumpFull = true;
+        //     GameUIManager.instance.ShowRightWind();
+
+        // }
 
     //    if(other.gameObject.CompareTag("endPoint")){
     //         if(GameManager.instance.endPoint.Length > GameManager.instance.currEndPoint + 1){
@@ -326,6 +402,7 @@ public class PlayerController : MonoBehaviour
         //     StartCoroutine(NextSceneCounter());
         // }
         if(other.gameObject.CompareTag("Die")){
+            isDie = true;
             //BgSound.Instance.PlayDie();
             Die();
         }
@@ -355,6 +432,8 @@ public class PlayerController : MonoBehaviour
     }
     
     public void Die(){
+        lr.enabled = false;
+        isDie = true;
         if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
             BgSound.Instance.PlayDie();
         }
@@ -362,7 +441,7 @@ public class PlayerController : MonoBehaviour
         coll.enabled = false;
         foot.SetActive(false);
 
-        spineAnimationState.SetAnimation(0, dieAnimationName, false);
+        spineAnimationState.SetAnimation(0, dieAnimationName, true);
         StartCoroutine(DieCouroutine());
         canJump = false;
     }

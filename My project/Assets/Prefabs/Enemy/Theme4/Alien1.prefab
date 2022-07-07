@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2397374318278267297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.46, y: -0.661, z: -85.68663}
+  m_LocalPosition: {x: 6.46, y: -0.661, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,7 +55,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 434d65b76fd47914a8c19db8d5bb6cd9, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -136,7 +136,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10316515, y: 1.7954638}
+  m_Offset: {x: -0.10316515, y: 1.6897312}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -147,7 +147,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9766474, y: 3.763988}
+  m_Size: {x: 1.9766474, y: 3.2291057}
   m_EdgeRadius: 0
 --- !u!50 &2397374318278267299
 Rigidbody2D:
@@ -187,6 +187,6 @@ MonoBehaviour:
   dieAnimationName: die
   left: 6.46
   right: 8.502
-  speed: 1
+  speed: 0.5
   canMove: 0
   endPoint: {fileID: 0}

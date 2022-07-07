@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckEndPoint();
+        //CheckEndPoint();
     }
     public void CheckEndPoint(){
         //endPointCurrent = endPoint[currEndPoint];
@@ -89,14 +89,3 @@ public class GameManager : MonoBehaviour
     
 }
 
-[CustomEditor(typeof(SetMap))]
-public class GamemanagerEditor : Editor {
-    public override void OnInspectorGUI() {
-        base.OnInspectorGUI();
-        if(GUILayout.Button("SELECT")){
-            SetMap t = (target as SetMap);
-            t.Set();
-        }
-        
-    }
-}

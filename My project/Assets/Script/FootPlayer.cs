@@ -25,6 +25,7 @@ public class FootPlayer : MonoBehaviour
        }
         if(other.gameObject.CompareTag("nextPlatform")){
             PlayerController.instance.NextPlatform();
+            PlayerController.instance.isCanJump = true;
         }
         // if(other.gameObject.CompareTag("jumpHalf")){
         //     GameUIManager.instance.ShowLeftWind();
@@ -32,11 +33,19 @@ public class FootPlayer : MonoBehaviour
         // if(other.gameObject.CompareTag("jumpFull")){
         //     GameUIManager.instance.ShowRightWind();
         // }
+        if(other.gameObject.CompareTag("JumpNgang")){
+            PlayerController.instance.isCanJump = true;
+        }
     }
     // private void OnCollisionEnter2D(Collision2D other) {
     //     if(other.gameObject.CompareTag("end")){
     //         PlayerController.instance.NextLevel();
     //         SaveData.instance.AddLevelAndSave();
+    //     }
+    // }
+    // private void OnCollisionEnter2D(Collision2D other) {
+    //      if(other.gameObject.CompareTag("nextPlatform")){
+    //         PlayerController.instance.NextPlatform();
     //     }
     // }
 }

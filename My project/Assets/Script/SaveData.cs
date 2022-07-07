@@ -28,8 +28,8 @@ public  class SaveData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Mode: " + PlayerPrefs.GetInt("Mode"));
-        Debug.Log(PlayerPrefs.GetInt("levelCurAI"));
+       // Debug.Log("Mode: " + PlayerPrefs.GetInt("Mode"));
+        //Debug.Log(PlayerPrefs.GetInt("levelCurAI"));
     }
     public void AddLevelAndSave(){
        if(PlayerPrefs.GetInt("Mode") == 0){

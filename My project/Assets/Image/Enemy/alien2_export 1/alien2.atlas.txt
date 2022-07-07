@@ -1,0 +1,63 @@
+alien2.png
+size:696,696
+filter:Linear,Linear
+pma:true
+ARM_1
+bounds:419,172,243,105
+ARM_2
+bounds:545,101,69,133
+rotate:90
+BODY
+bounds:419,27,124,143
+DUI_1
+bounds:654,648,39,45
+offsets:1,1,42,47
+DUI_2
+bounds:654,599,35,47
+offsets:1,1,37,49
+EYES
+bounds:2,7,124,81
+offsets:1,2,126,84
+EYES_2
+bounds:545,27,109,72
+offsets:1,2,111,75
+HEAD
+bounds:2,90,171,169
+offsets:1,1,173,171
+HELMET
+bounds:2,469,232,224
+offsets:2,1,235,226
+LEG_1
+bounds:128,18,70,75
+offsets:0,0,70,80
+rotate:90
+LEG_2
+bounds:205,11,57,84
+rotate:90
+MOUTH_1
+bounds:654,512,42,18
+offsets:1,1,44,20
+rotate:90
+MOUTH_2
+bounds:654,556,41,29
+offsets:1,1,43,31
+rotate:90
+fx/Layer 1
+bounds:236,487,207,206
+offsets:1,1,209,208
+fx/Layer 2
+bounds:445,487,207,206
+offsets:1,1,209,208
+fx/Layer 3
+bounds:236,279,207,206
+offsets:1,1,209,208
+fx/Layer 4
+bounds:2,261,207,206
+offsets:1,1,209,208
+fx/Layer 5
+bounds:445,279,207,206
+offsets:1,1,209,208
+fx/Layer 6
+bounds:211,70,207,206
+offsets:1,1,209,208
+rotate:90

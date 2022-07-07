@@ -19,7 +19,7 @@ public class DaiBang : MonoBehaviour
     public Spine.Skeleton skeleton;
     #endregion
     private Rigidbody2D rb;
-    private bool canMove = false;
+    public bool canMove = false;
     private void Start(){
         skeletonAnimation = GetComponent<SkeletonAnimation>();
         spineAnimationState = skeletonAnimation.AnimationState;
@@ -65,6 +65,9 @@ public class DaiBang : MonoBehaviour
         if(other.gameObject.CompareTag("MainCamera"))
         {
             canMove = true;
+        }
+        if(other.gameObject.CompareTag("DestroyEnemy"))   {
+            Destroy(this.gameObject);
         }
     }
     

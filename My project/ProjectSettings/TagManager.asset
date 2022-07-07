@@ -20,6 +20,10 @@ TagManager:
   - DieOverCamera
   - footAI
   - PlayerAI
+  - GroundFull
+  - GroundHalf
+  - JumpNgang
+  - DestroyEnemy
   layers:
   - Default
   - TransparentFX
@@ -29,7 +33,7 @@ TagManager:
   - UI
   - Player
   - PlayerAI
-  - 
+  - Ground
   - 
   - 
   - 

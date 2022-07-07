@@ -23,6 +23,7 @@ public class Alien2 : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D coll;
     public GameObject Warning;
+    public bool isStartShooting = false;
      private void Start()
     {
        //StartCoroutine(AnimationCoroutine());
@@ -31,6 +32,10 @@ public class Alien2 : MonoBehaviour
         skeleton = skeletonAnimation.Skeleton;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
+        if(isStartShooting){
+            isShooting = true;
+            ShootingEnemy();
+        }
     }
      private void Shot(){
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -91,5 +96,13 @@ public class Alien2 : MonoBehaviour
     IEnumerator Die(){
         yield return new WaitForSeconds(2f);
         Destroy(this.gameObject);
+    }
+     private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Player")){
+            PlayerController.instance.Die();
+        }
+        if(other.gameObject.CompareTag("PlayerAI")){
+            PlayerAI.instance.Die();
+        }
     }
 }

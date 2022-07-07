@@ -8,6 +8,7 @@ public class HomeManager : MonoBehaviour
     public static HomeManager instance;
     private void Awake() {
         instance = this;
+        
     }
     public void LoadSceneCurrent(){
         
@@ -15,8 +16,8 @@ public class HomeManager : MonoBehaviour
             BgSound.Instance.PlayTap();
         }
         int LevelCur = PlayerPrefs.GetInt("levelCur", 1);
-        //SceneManager.LoadScene("level" + LevelCur);
-        SceneManager.LoadScene("level35");
+        SceneManager.LoadScene("level" + LevelCur);
+        //SceneManager.LoadScene("level19");
         PlayerPrefs.SetInt("Mode", 0);
         PlayerPrefs.Save();
     }

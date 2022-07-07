@@ -23,8 +23,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5818366167396077360}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.78, y: 12.74, z: -39.098755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.04, y: 18.1, z: -39.098755}
   m_LocalScale: {x: 2.1658382, y: 2.054129, z: 1}
   m_Children: []
   m_Father: {fileID: 5818366168005640698}
@@ -124,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5818366167818559263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.43, y: 12.94, z: -39.098755}
+  m_LocalPosition: {x: 6.83, y: 18.3, z: -39.098755}
   m_LocalScale: {x: 2.165838, y: 2.054129, z: 1}
   m_Children: []
   m_Father: {fileID: 5818366168005640698}
@@ -328,6 +328,11 @@ MonoBehaviour:
   displacementY: 0
   forceX: 0
   foot: {fileID: 5818366167669000843}
+  Ground:
+    serializedVersion: 2
+    m_Bits: 0
+  isTouchGround: 0
+  isCanJump: 1
 --- !u!50 &5818366168005640644
 Rigidbody2D:
   serializedVersion: 4
@@ -384,7 +389,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5685aae0f987cfe46840a87c6eb42ca2, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -418,8 +423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 7a9ac42155757fe44b0d805c03294b73, type: 2}
-  initialSkinName: 
+  skeletonDataAsset: {fileID: 11400000, guid: 3a7bd6d045cc51a469980b37a34a2cf7, type: 2}
+  initialSkinName: space
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
   initialFlipY: 0
