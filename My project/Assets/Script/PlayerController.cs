@@ -181,8 +181,8 @@ public class PlayerController : MonoBehaviour
                 //jumpForce.x += jumpForceUp.x * Time.deltaTime + speedWind/300;
 
                 // Not effect by wind
-                jumpForce.x += jumpForceUp.x * Time.deltaTime/1.5f;
-                jumpForce.y += jumpForceUp.y * Time.deltaTime/1.5f;
+                jumpForce.x += jumpForceUp.x * Time.deltaTime/1.3f;
+                jumpForce.y += jumpForceUp.y * Time.deltaTime/1.3f;
                 jumpForce.x = Mathf.Clamp(jumpForce.x, minForceX, maxForceX);
                 jumpForce.y = Mathf.Clamp(jumpForce.y, minForceY, maxForceY);
                 
@@ -193,8 +193,8 @@ public class PlayerController : MonoBehaviour
                 //jumpForce.x -= jumpForceUp.x * Time.deltaTime + speedWind/300;
 
                 // Not effect by wind
-                jumpForce.x -= jumpForceUp.x * Time.deltaTime/1.5f;
-                jumpForce.y -= jumpForceUp.y * Time.deltaTime/1.5f;
+                jumpForce.x -= jumpForceUp.x * Time.deltaTime/1.3f;
+                jumpForce.y -= jumpForceUp.y * Time.deltaTime/1.3f;
                 jumpForce.x = Mathf.Clamp(jumpForce.x, minForceX, maxForceX);
                 jumpForce.y = Mathf.Clamp(jumpForce.y, minForceY, maxForceY);
             }

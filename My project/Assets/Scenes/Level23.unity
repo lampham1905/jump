@@ -666,6 +666,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1192560934}
     - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
+      propertyPath: RespawnPanel
+      value: 
+      objectReference: {fileID: 1192560939}
+    - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
       propertyPath: SettingPanel
       value: 
       objectReference: {fileID: 1192560938}
@@ -776,15 +780,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6861306474409704505, guid: 70d19d91bf3b92742b48f04a08ce6836, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6861306474409704505, guid: 70d19d91bf3b92742b48f04a08ce6836, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.153517
+      value: -18.28
       objectReference: {fileID: 0}
     - target: {fileID: 6861306474409704505, guid: 70d19d91bf3b92742b48f04a08ce6836, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -1.68
       objectReference: {fileID: 0}
     - target: {fileID: 6861306474409704505, guid: 70d19d91bf3b92742b48f04a08ce6836, type: 3}
       propertyPath: m_LocalPosition.z
@@ -976,7 +980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8983f73a5f850a74fb4a3941ddc4c980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.2
   bottomPoint: -5.252672
   topPoint: -4.15
   leftPoint: 0
@@ -1624,31 +1628,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d47c7598169a584a9109c4ba61ebe03, type: 3}
---- !u!1 &843929612 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1429659876963605954, guid: 5d47c7598169a584a9109c4ba61ebe03, type: 3}
-  m_PrefabInstance: {fileID: 843929611}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &843929613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843929612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59524c365e352e64caf9ecb6dba20dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  bottomPoint: -3.289721
-  topPoint: -3.289721
-  leftPoint: 0
-  rightPoint: 0
-  IsMoveUpDown: 1
-  IsMoveLeftRight: 0
-  canMove: 0
 --- !u!4 &843929616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1429659876963605959, guid: 5d47c7598169a584a9109c4ba61ebe03, type: 3}
@@ -1684,11 +1663,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4003373413717038966, guid: acae6d0870766f246a9ed81f71d6fc58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13832727
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4003373413717038966, guid: acae6d0870766f246a9ed81f71d6fc58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.75
+      value: 4.77
       objectReference: {fileID: 0}
     - target: {fileID: 4003373413717038966, guid: acae6d0870766f246a9ed81f71d6fc58, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1803,7 +1782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59524c365e352e64caf9ecb6dba20dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.2
   bottomPoint: -4.66
   topPoint: -3.68
   leftPoint: 0
@@ -1890,7 +1869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8983f73a5f850a74fb4a3941ddc4c980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.2
   bottomPoint: 0
   topPoint: 0
   leftPoint: -0.63
@@ -2457,7 +2436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59524c365e352e64caf9ecb6dba20dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.2
   bottomPoint: 0
   topPoint: -3.997688
   leftPoint: -4.65
@@ -2496,7 +2475,11 @@ PrefabInstance:
     - target: {fileID: 1402347280738726736, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3b7d22f7dfccacb4daca9bd92d12cf43, type: 3}
+      objectReference: {fileID: 21300000, guid: 8d492dc9c99b83b409dbc5771879f765, type: 3}
+    - target: {fileID: 1648471622331365108, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3c5974a0f82909d4287515f7512c3713, type: 3}
     - target: {fileID: 2197896896010578903, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2613,6 +2596,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3279125626647935345, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -49
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279125626647935345, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3531446439611853626, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2620,6 +2611,14 @@ PrefabInstance:
     - target: {fileID: 3531446439611853626, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TurnOffSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323456255132446334, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3cfb3d84c90b47242ba83678e4388beb, type: 3}
+    - target: {fileID: 7019192354009927254, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8117414735044198017, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2654,6 +2653,11 @@ GameObject:
 --- !u!1 &1192560938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1625089494, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+  m_PrefabInstance: {fileID: 1192560933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1192560939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3370922265175752135, guid: d77a6454006038c4aaa37c683279d150, type: 3}
   m_PrefabInstance: {fileID: 1192560933}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1192560940 stripped
@@ -2978,7 +2982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8983f73a5f850a74fb4a3941ddc4c980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.2
   bottomPoint: 0
   topPoint: 0
   leftPoint: 10.59262

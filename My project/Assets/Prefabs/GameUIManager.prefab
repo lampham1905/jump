@@ -48,4 +48,8 @@ MonoBehaviour:
   DeadPanel: {fileID: 0}
   PausePanel: {fileID: 0}
   SettingPanel: {fileID: 0}
-  LevelText: {fileID: 0}
+  RespawnPanel: {fileID: 0}
+  LeftWind: {fileID: 0}
+  RightWind: {fileID: 0}
+  soundOff: {fileID: 0}
+  musicOff: {fileID: 0}

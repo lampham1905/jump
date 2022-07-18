@@ -12,6 +12,7 @@ public class GameUIManager : MonoBehaviour
     public GameObject DeadPanel;
     public GameObject PausePanel;
     public GameObject SettingPanel;
+    public GameObject RespawnPanel;
     public GameObject LeftWind;
     public GameObject RightWind;
     public GameObject soundOff;
@@ -40,18 +41,26 @@ public class GameUIManager : MonoBehaviour
         VictoryPanel.SetActive(true);
         GamePlayPanel.SetActive(false);
         Time.timeScale = 0;
+        VictoryUIAnimation.ins.StartAnimation();
+        PlayerController.instance.canJump = false;
     }
     public void ShowDeadPanel(){
         DeadPanel.SetActive(true);
         GamePlayPanel.SetActive(false);
+        DeadUIAnimation.ins.StartAnimation();
         Time.timeScale = 0;
+        PlayerController.instance.canJump = false;
     }
     public void ShowPausePanel(){
         PausePanel.SetActive(true);
         GamePlayPanel.SetActive(false);
         PlayerController.instance.canJump = false;
+        PauseUIAnimation.ins.StartAnimation();
     }
     public void HidePauseGamePanel(){
+         if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            BgSound.Instance.PlayTap();
+        }
          PausePanel.SetActive(false);
         GamePlayPanel.SetActive(true);
        Invoke("ResumeGame", 0.01f);
@@ -63,14 +72,26 @@ public class GameUIManager : MonoBehaviour
     
         SettingPanel.SetActive(true);
         GamePlayPanel.SetActive(false);
-       
-
+        Time.timeScale = 0;
     }
     public void HideSettingsPanel(){
         SettingPanel.SetActive(false);
         GamePlayPanel.SetActive(true);
+        Time.timeScale = 1;
     }
-   
+    public void ShowRespawnPanel(){
+        RespawnPanel.SetActive(true);
+        GamePlayPanel.SetActive(false);
+        Time.timeScale  = 0;
+        RespawnUIAnimation.ins.StartAnimation();
+        PlayerController.instance.canJump = false;
+    }
+     public void HideRespawnPanel(){
+        RespawnPanel.SetActive(false);
+        GamePlayPanel.SetActive(true);
+        Time.timeScale  = 1;
+        PlayerController.instance.canJump = true;
+    }
     void ResumeGame(){
        Time.timeScale = 1; 
     }

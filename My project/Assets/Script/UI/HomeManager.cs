@@ -16,8 +16,8 @@ public class HomeManager : MonoBehaviour
             BgSound.Instance.PlayTap();
         }
         int LevelCur = PlayerPrefs.GetInt("levelCur", 1);
-        SceneManager.LoadScene("level" + LevelCur);
-        //SceneManager.LoadScene("level19");
+        //SceneManager.LoadScene("level" + LevelCur);
+        SceneManager.LoadScene("level23");
         PlayerPrefs.SetInt("Mode", 0);
         PlayerPrefs.Save();
     }

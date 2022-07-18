@@ -25,6 +25,7 @@ public class SettingBtn : Button
         base.OnPointerDown(eventData);
         Time.timeScale = 0;
         GameUIManager.instance.ShowSettingPanel();
+        SettingUIAnimation.ins.StartAnimation();
         //PlayerController.instance.canJump = true;
     }
 }

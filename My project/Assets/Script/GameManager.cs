@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
         if(PlayerPrefs.GetInt("Mode") == 1){
             Instantiate(AI, spawnAI.position, Quaternion.identity);
         }
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
@@ -72,6 +74,15 @@ public class GameManager : MonoBehaviour
           if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
             BgSound.Instance.PlayTap();
         }
+        GameUIManager.instance.HidePauseGamePanel();
+        GameUIManager.instance.HideRespawnPanel();
+        Time.timeScale = 1;
+    }
+    public void ReturnGameHome(){
+        if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
+            BgSound.Instance.PlayTap();
+        }
+        SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
     public void AddLevel(){

@@ -577,6 +577,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1192560934}
     - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
+      propertyPath: RespawnPanel
+      value: 
+      objectReference: {fileID: 1192560939}
+    - target: {fileID: 3032007287120809391, guid: 3043c7ef80577a14cacac57d67657ce5, type: 3}
       propertyPath: SettingPanel
       value: 
       objectReference: {fileID: 1192560938}
@@ -1283,6 +1287,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8571653967501305062, guid: 190cb7143a170f7468f2c49282de9368, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07266a4d4f3c22e46951de156c2f5875, type: 2}
     - target: {fileID: 8571653967501305080, guid: 190cb7143a170f7468f2c49282de9368, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1872,7 +1880,11 @@ PrefabInstance:
     - target: {fileID: 1402347280738726736, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3b7d22f7dfccacb4daca9bd92d12cf43, type: 3}
+      objectReference: {fileID: 21300000, guid: 8d492dc9c99b83b409dbc5771879f765, type: 3}
+    - target: {fileID: 1648471622331365108, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 62dc64272ba8de74581adee393a7432c, type: 3}
     - target: {fileID: 2197896896010578903, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1989,6 +2001,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3279125626647935345, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -52
+      objectReference: {fileID: 0}
     - target: {fileID: 3531446439611853626, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1996,6 +2012,14 @@ PrefabInstance:
     - target: {fileID: 3531446439611853626, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TurnOffSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323456255132446334, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3cfb3d84c90b47242ba83678e4388beb, type: 3}
+    - target: {fileID: 7019192354009927254, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8117414735044198017, guid: d77a6454006038c4aaa37c683279d150, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2030,6 +2054,11 @@ GameObject:
 --- !u!1 &1192560938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1625089494, guid: d77a6454006038c4aaa37c683279d150, type: 3}
+  m_PrefabInstance: {fileID: 1192560933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1192560939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3370922265175752135, guid: d77a6454006038c4aaa37c683279d150, type: 3}
   m_PrefabInstance: {fileID: 1192560933}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1192560940 stripped
@@ -2093,6 +2122,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8571653967501305062, guid: 190cb7143a170f7468f2c49282de9368, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07266a4d4f3c22e46951de156c2f5875, type: 2}
     - target: {fileID: 8571653967501305080, guid: 190cb7143a170f7468f2c49282de9368, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2271,7 +2304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1429659876963605959, guid: 94a9f96334777544a99a3de41e96c5dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.57
+      value: -4.79
       objectReference: {fileID: 0}
     - target: {fileID: 1429659876963605959, guid: 94a9f96334777544a99a3de41e96c5dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2326,38 +2359,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1482138581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8983f73a5f850a74fb4a3941ddc4c980, type: 3}
+  m_Script: {fileID: 11500000, guid: 59524c365e352e64caf9ecb6dba20dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
-  bottomPoint: -4.57
-  topPoint: -3.8
+  bottomPoint: -4.79
+  topPoint: -3.82
   leftPoint: 0
   rightPoint: 0
   IsMoveUpDown: 1
   IsMoveLeftRight: 0
   canMove: 0
---- !u!50 &1482138583
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482138581}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &1503130079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2766,6 +2778,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8571653967501305062, guid: 190cb7143a170f7468f2c49282de9368, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07266a4d4f3c22e46951de156c2f5875, type: 2}
     - target: {fileID: 8571653967501305080, guid: 190cb7143a170f7468f2c49282de9368, type: 3}
       propertyPath: m_Mesh
       value: 

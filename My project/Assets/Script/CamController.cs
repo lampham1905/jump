@@ -50,7 +50,7 @@ public class CamController : MonoBehaviour
     }
     private void CheckScreen()
     {
-        Debug.Log(cam.aspect);
+        //Debug.Log(cam.aspect);
         if(cam.aspect > 0.5f)
         {
             cam.orthographicSize = 5f;

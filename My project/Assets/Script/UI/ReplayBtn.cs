@@ -22,6 +22,7 @@ public class ReplayBtn : Button
           if(PlayerPrefs.GetInt("isSoundOn", 1) == 1){
             BgSound.Instance.PlayTap();
         }
-        GameManager.instance.ResetScene();
+        //GameManager.instance.ResetScene();
+        GameUIManager.instance.ShowRespawnPanel();
     }
 }

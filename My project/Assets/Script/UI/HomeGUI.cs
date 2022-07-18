@@ -29,7 +29,7 @@ public class HomeGUI : MonoBehaviour
     {
         CheckMusicStart();
         CheckSoundStart();
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         //PlayerPrefs.DeleteAll();
         // PlayerPrefs.SetInt("levelCur", 28);
         // PlayerPrefs.Save();
@@ -39,7 +39,7 @@ public class HomeGUI : MonoBehaviour
         }
         else
         {levelCur = PlayerPrefs.GetInt("levelCur");}   
-        Debug.Log(levelCur);
+        //Debug.Log(levelCur);
          if( levelCur >= 1 && levelCur <= 15) {
             Theme1.SetActive(true);
             Theme2.SetActive(false);
@@ -74,7 +74,7 @@ public class HomeGUI : MonoBehaviour
         }
         SettingPanel.SetActive(true);
         HomePanel.SetActive(false);
-       
+        SettingUIAnimation.ins.StartAnimation();
         Time.timeScale = 0;
     }
     public void HideSettingsPanel(){

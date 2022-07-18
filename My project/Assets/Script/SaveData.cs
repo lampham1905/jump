@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,7 @@ public  class SaveData : MonoBehaviour
     void Start()
     {
         //PlayerPrefs.DeleteAll();
-         AddLevelAndSave();
+         //AddLevelAndSave();
          AddLevelAndSaveAI();
     }
 
@@ -34,10 +35,11 @@ public  class SaveData : MonoBehaviour
     public void AddLevelAndSave(){
        if(PlayerPrefs.GetInt("Mode") == 0){
             levelCur = PlayerPrefs.GetInt("levelCur", 0);
-            if(levelCur < SceneManager.GetActiveScene().buildIndex){
+            if(levelCur <= SceneManager.GetActiveScene().buildIndex){
                 levelCur = SceneManager.GetActiveScene().buildIndex;
-                PlayerPrefs.SetInt("levelCur", levelCur);
+                PlayerPrefs.SetInt("levelCur", levelCur+1);
                 PlayerPrefs.Save();
+                UnityEngine.Debug.Log(PlayerPrefs.GetInt("levelCur"));
         }
         
        }
